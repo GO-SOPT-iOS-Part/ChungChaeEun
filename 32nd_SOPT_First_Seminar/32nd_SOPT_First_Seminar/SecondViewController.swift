@@ -11,12 +11,19 @@ final class SecondViewController: UIViewController {
     
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "제 이름은요!"
-        label.font = .boldSystemFont(ofSize: 25)
+        label.font = .boldSystemFont(ofSize: 20)
         label.textAlignment = .center
-//        label.shadowColor = .systemGray3
-//        label.shadowOffset = CGSize(width: 3, height:  3)
+        // MARK: - 속성 추가
+        label.shadowColor = .systemGray3
+        label.shadowOffset = CGSize(width: 3, height:  3)
         return label
+    }()
+    
+    // MARK: - 이미지 추가
+    private let welcomeImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named:"환영해요.png")
+        return imageView
     }()
     
     private lazy var backButton: UIButton = {
@@ -24,6 +31,7 @@ final class SecondViewController: UIViewController {
         button.setTitle("뒤로가기", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .yellow
+        // MARK: - 속성 추가
         button.layer.cornerRadius = 20
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
         button.addTarget(self,
@@ -48,7 +56,7 @@ final class SecondViewController: UIViewController {
     
     func dataBind() {
         guard let name = self.name else { return }
-        nameLabel.text = "\(name)님 환영합니다!"
+        nameLabel.text = "🎊\(name)님 환영합니다!🎊"
     }
 
 }
@@ -62,16 +70,21 @@ private extension SecondViewController {
     
     func setLayout() {
         
-        [nameLabel, backButton].forEach {
+        [nameLabel, welcomeImageView, backButton].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
         
-        NSLayoutConstraint.activate([nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
+        NSLayoutConstraint.activate([nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
+                                     nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
     
+        NSLayoutConstraint.activate([welcomeImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 30),
+                                     welcomeImageView.heightAnchor.constraint(equalToConstant: 100),
+                                     welcomeImageView.widthAnchor.constraint(equalToConstant: 100),
+                                     welcomeImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+                                    ])
         
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 40),
+        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: welcomeImageView.bottomAnchor, constant: 30),
                                      backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
                                      backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
                                      backButton.heightAnchor.constraint(equalToConstant: 48)])
