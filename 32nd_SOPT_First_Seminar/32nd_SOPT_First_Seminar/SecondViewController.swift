@@ -14,8 +14,8 @@ final class SecondViewController: UIViewController {
         label.text = "제 이름은요!"
         label.font = .boldSystemFont(ofSize: 25)
         label.textAlignment = .center
-        label.shadowColor = .systemGray3
-        label.shadowOffset = CGSize(width: 3, height:  3)
+//        label.shadowColor = .systemGray3
+//        label.shadowOffset = CGSize(width: 3, height:  3)
         return label
     }()
     
@@ -31,6 +31,7 @@ final class SecondViewController: UIViewController {
                                 for: .touchUpInside)
         return button
        }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,8 @@ final class SecondViewController: UIViewController {
     var name: String?
     
     func dataBind() {
-        nameLabel.text = name
+        guard let name = self.name else { return }
+        nameLabel.text = "\(name)님 환영합니다!"
     }
 
 }
@@ -69,7 +71,7 @@ private extension SecondViewController {
                                      nameLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)])
     
         
-        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+        NSLayoutConstraint.activate([backButton.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 40),
                                      backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
                                      backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
                                      backButton.heightAnchor.constraint(equalToConstant: 48)])
