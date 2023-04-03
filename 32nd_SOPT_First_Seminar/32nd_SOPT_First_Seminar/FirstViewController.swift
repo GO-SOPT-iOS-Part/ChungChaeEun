@@ -12,41 +12,47 @@ class FirstViewController: UIViewController {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "이름이 무엇인가요?"
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .blue
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .black
         label.textAlignment = .center
+        label.shadowColor = .systemGray3
+        label.shadowOffset = CGSize(width: 2, height: 2)
         return label
     }()
     
     
     private lazy var presentButton: UIButton = {
-          let button = UIButton()
-          button.setTitle("present!", for: .normal)
-          button.backgroundColor = .yellow
-          button.setTitleColor(.blue, for: .normal)
+        let button = UIButton()
+        button.setTitle("present!", for: .normal)
+        button.backgroundColor = .yellow
+        button.setTitleColor(.black, for: .normal)
         button.addTarget(self,
                                  action: #selector(presentButtonTapped),
                                  for: .touchUpInside)
-          return button
+        button.layer.cornerRadius = 20
+        return button
       }()
       
       private lazy var pushButton: UIButton = {
           let button = UIButton()
           button.setTitle("push!", for: .normal)
           button.backgroundColor = .yellow
-          button.setTitleColor(.blue, for: .normal)
+          button.setTitleColor(.black, for: .normal)
           button.addTarget(self,
                                    action: #selector(pushButtonTapped),
                                    for: .touchUpInside)
+          button.layer.cornerRadius = 20
           return button
       }()
     
     private let nameTextField: UITextField = {
-            let textField = UITextField()
-            textField.placeholder = "이름을 입력해주세요"
-            textField.clearButtonMode = .whileEditing
-            textField.layer.borderColor = UIColor.gray.cgColor
-            textField.layer.borderWidth = 1
+        let textField = UITextField()
+        textField.placeholder = "이름을 입력해주세요"
+        textField.clearButtonMode = .whileEditing
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.borderWidth = 1
+        textField.layer.cornerRadius = 20
+        textField.addLeftPadding()
             return textField
         }()
     
@@ -100,7 +106,7 @@ private extension FirstViewController {
 //        if let name = nameTextField.text {
 //                    secondViewController.dataBind(name: name)
 //                }
-        secondViewController.modalPresentationStyle = .fullScreen
+        secondViewController.modalPresentationStyle = .popover
         secondViewController.name = name
         self.present(secondViewController, animated: true)
     }
@@ -125,4 +131,13 @@ private extension FirstViewController {
         pushToSecondViewController()
     }
     
+}
+
+
+extension UITextField {
+  func addLeftPadding() {
+    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
+    self.leftView = paddingView
+    self.leftViewMode = ViewMode.always
+  }
 }

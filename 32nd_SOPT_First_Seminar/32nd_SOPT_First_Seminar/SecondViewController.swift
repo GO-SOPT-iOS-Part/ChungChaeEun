@@ -12,20 +12,24 @@ final class SecondViewController: UIViewController {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "제 이름은요!"
-        label.font = .systemFont(ofSize: 16)
+        label.font = .boldSystemFont(ofSize: 25)
         label.textAlignment = .center
+        label.shadowColor = .systemGray3
+        label.shadowOffset = CGSize(width: 3, height:  3)
         return label
     }()
     
     private lazy var backButton: UIButton = {
-           let button = UIButton()
-           button.setTitle("뒤로가기", for: .normal)
-           button.setTitleColor(.blue, for: .normal)
-           button.titleLabel?.font = .boldSystemFont(ofSize: 20)
+        let button = UIButton()
+        button.setTitle("뒤로가기", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .yellow
+        button.layer.cornerRadius = 20
+        button.titleLabel?.font = .boldSystemFont(ofSize: 15)
         button.addTarget(self,
                                 action: #selector(backButtonTapped),
                                 for: .touchUpInside)
-           return button
+        return button
        }()
 
     override func viewDidLoad() {
@@ -35,7 +39,6 @@ final class SecondViewController: UIViewController {
         dataBind()
     }
     
-//
 //    func dataBind(name: String) {
 //        nameLabel.text = name
 //    }
