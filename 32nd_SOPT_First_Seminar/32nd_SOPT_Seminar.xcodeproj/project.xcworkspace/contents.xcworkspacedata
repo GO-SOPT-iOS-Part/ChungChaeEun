@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/chungchaeeun/GO_SOPT_32/32nd_SOPT_First_Seminar/32nd_SOPT_Seminar.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
