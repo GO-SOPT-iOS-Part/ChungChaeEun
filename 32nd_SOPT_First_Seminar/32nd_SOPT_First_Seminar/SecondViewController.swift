@@ -35,12 +35,12 @@ final class SecondViewController: UIViewController {
         button.layer.cornerRadius = 20
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
         button.addTarget(self,
-                                action: #selector(backButtonTapped),
-                                for: .touchUpInside)
+                         action: #selector(backButtonTapped),
+                         for: .touchUpInside)
         return button
-       }()
+    }()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -48,9 +48,9 @@ final class SecondViewController: UIViewController {
         dataBind()
     }
     
-//    func dataBind(name: String) {
-//        nameLabel.text = name
-//    }
+    //    func dataBind(name: String) {
+    //        nameLabel.text = name
+    //    }
     
     var name: String?
     
@@ -58,7 +58,7 @@ final class SecondViewController: UIViewController {
         guard let name = self.name else { return }
         nameLabel.text = "🎊\(name)님 환영합니다!🎊"
     }
-
+    
 }
 
 private extension SecondViewController {
@@ -77,7 +77,7 @@ private extension SecondViewController {
         
         NSLayoutConstraint.activate([nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
                                      nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
-    
+        
         NSLayoutConstraint.activate([welcomeImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 30),
                                      welcomeImageView.heightAnchor.constraint(equalToConstant: 100),
                                      welcomeImageView.widthAnchor.constraint(equalToConstant: 100),
@@ -90,13 +90,13 @@ private extension SecondViewController {
                                      backButton.heightAnchor.constraint(equalToConstant: 48)])
     }
     @objc
-        func backButtonTapped() {
-            
-            if self.navigationController == nil {
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                self.navigationController?.popViewController(animated: true)
-            }
+    func backButtonTapped() {
+        
+        if self.navigationController == nil {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
         }
-
+    }
+    
 }

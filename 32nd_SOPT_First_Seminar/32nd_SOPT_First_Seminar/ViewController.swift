@@ -16,10 +16,10 @@ final class ViewController: UIViewController {
         return label
     }()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setStyle()
         setLayout()
     }

@@ -39,25 +39,25 @@ class FirstViewController: UIViewController {
         button.backgroundColor = .yellow
         button.setTitleColor(.black, for: .normal)
         button.addTarget(self,
-                                 action: #selector(presentButtonTapped),
-                                 for: .touchUpInside)
+                         action: #selector(presentButtonTapped),
+                         for: .touchUpInside)
         // MARK: - 속성 추가
         button.layer.cornerRadius = 20
         return button
-      }()
-      
-      private lazy var pushButton: UIButton = {
-          let button = UIButton()
-          button.setTitle("push!", for: .normal)
-          button.backgroundColor = .yellow
-          button.setTitleColor(.black, for: .normal)
-          button.addTarget(self,
-                                   action: #selector(pushButtonTapped),
-                                   for: .touchUpInside)
-          // MARK: - 속성 추가
-          button.layer.cornerRadius = 20
-          return button
-      }()
+    }()
+    
+    private lazy var pushButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("push!", for: .normal)
+        button.backgroundColor = .yellow
+        button.setTitleColor(.black, for: .normal)
+        button.addTarget(self,
+                         action: #selector(pushButtonTapped),
+                         for: .touchUpInside)
+        // MARK: - 속성 추가
+        button.layer.cornerRadius = 20
+        return button
+    }()
     
     private let nameTextField: UITextField = {
         let textField = UITextField()
@@ -69,10 +69,10 @@ class FirstViewController: UIViewController {
         textField.layer.cornerRadius = 20
         textField.addLeftPadding()
         textField.autocorrectionType = .no
-            return textField
-        }()
+        return textField
+    }()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -123,9 +123,9 @@ private extension FirstViewController {
     func presentToSecondViewController() {
         let secondViewController = SecondViewController()
         guard let name = nameTextField.text else { return }
-//        if let name = nameTextField.text {
-//                    secondViewController.dataBind(name: name)
-//                }
+        //        if let name = nameTextField.text {
+        //                    secondViewController.dataBind(name: name)
+        //                }
         secondViewController.modalPresentationStyle = .popover
         secondViewController.name = name
         self.present(secondViewController, animated: true)
@@ -133,9 +133,9 @@ private extension FirstViewController {
     
     func pushToSecondViewController() {
         let secondViewController = SecondViewController()
-//        if let name = nameTextField.text {
-//                    secondViewController.dataBind(name: name)
-//                }
+        //        if let name = nameTextField.text {
+        //                    secondViewController.dataBind(name: name)
+        //                }
         guard let name = nameTextField.text else { return }
         secondViewController.name = name
         self.navigationController?.pushViewController(secondViewController, animated: true)
@@ -162,9 +162,9 @@ private extension FirstViewController {
 
 
 extension UITextField {
-  func addLeftPadding() {
-    let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
-    self.leftView = paddingView
-    self.leftViewMode = ViewMode.always
-  }
+    func addLeftPadding() {
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
+        self.leftView = paddingView
+        self.leftViewMode = ViewMode.always
+    }
 }
