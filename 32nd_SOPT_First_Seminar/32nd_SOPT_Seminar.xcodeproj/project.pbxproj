@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C309F86029D7FB03007BAF98 /* 32nd_SOPT_First_Seminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 32nd_SOPT_First_Seminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C309F86029D7FB03007BAF98 /* 32nd_SOPT_Seminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 32nd_SOPT_Seminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C309F86329D7FB03007BAF98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C309F86529D7FB03007BAF98 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C309F86729D7FB03007BAF98 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		C309F86129D7FB03007BAF98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C309F86029D7FB03007BAF98 /* 32nd_SOPT_First_Seminar.app */,
+				C309F86029D7FB03007BAF98 /* 32nd_SOPT_Seminar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C309F85F29D7FB03007BAF98 /* 32nd_SOPT_First_Seminar */ = {
+		C309F85F29D7FB03007BAF98 /* 32nd_SOPT_Seminar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C309F87429D7FB06007BAF98 /* Build configuration list for PBXNativeTarget "32nd_SOPT_First_Seminar" */;
+			buildConfigurationList = C309F87429D7FB06007BAF98 /* Build configuration list for PBXNativeTarget "32nd_SOPT_Seminar" */;
 			buildPhases = (
 				C309F85C29D7FB03007BAF98 /* Sources */,
 				C309F85D29D7FB03007BAF98 /* Frameworks */,
@@ -88,9 +88,9 @@
 			);
 			dependencies = (
 			);
-			name = 32nd_SOPT_First_Seminar;
+			name = 32nd_SOPT_Seminar;
 			productName = 32nd_SOPT_First_Seminar;
-			productReference = C309F86029D7FB03007BAF98 /* 32nd_SOPT_First_Seminar.app */;
+			productReference = C309F86029D7FB03007BAF98 /* 32nd_SOPT_Seminar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C309F85B29D7FB03007BAF98 /* Build configuration list for PBXProject "32nd_SOPT_First_Seminar" */;
+			buildConfigurationList = C309F85B29D7FB03007BAF98 /* Build configuration list for PBXProject "32nd_SOPT_Seminar" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C309F85F29D7FB03007BAF98 /* 32nd_SOPT_First_Seminar */,
+				C309F85F29D7FB03007BAF98 /* 32nd_SOPT_Seminar */,
 			);
 		};
 /* End PBXProject section */
@@ -347,7 +347,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C309F85B29D7FB03007BAF98 /* Build configuration list for PBXProject "32nd_SOPT_First_Seminar" */ = {
+		C309F85B29D7FB03007BAF98 /* Build configuration list for PBXProject "32nd_SOPT_Seminar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C309F87229D7FB06007BAF98 /* Debug */,
@@ -356,7 +356,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C309F87429D7FB06007BAF98 /* Build configuration list for PBXNativeTarget "32nd_SOPT_First_Seminar" */ = {
+		C309F87429D7FB06007BAF98 /* Build configuration list for PBXNativeTarget "32nd_SOPT_Seminar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C309F87529D7FB06007BAF98 /* Debug */,
