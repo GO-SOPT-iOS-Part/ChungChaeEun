@@ -30,6 +30,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.layer.cornerRadius = 3
         $0.setPlaceholder(color: .gray2)
         $0.addLeftPadding()
+        $0.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: 0))
+        $0.rightViewMode = .always
         $0.autocapitalizationType = .none
         $0.autocorrectionType = .no
         $0.keyboardType = .emailAddress
@@ -43,20 +45,38 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.layer.backgroundColor = UIColor.gray4.cgColor
         $0.layer.cornerRadius = 3
         $0.setPlaceholder(color: .gray2)
+        $0.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: 0))
+        $0.rightViewMode = .always
         $0.addLeftPadding()
         $0.autocapitalizationType = .none
         $0.autocorrectionType = .no
         $0.isSecureTextEntry = true
-        // TODO: clearButtonMode, hidden eye 설정
+        $0.textContentType = .password
         $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    private lazy var clearEmailButton = UIButton().then {
+        $0.setImage(UIImage(named: "icn_x_circle"), for: .normal)
+        $0.addTarget(self, action: #selector(clearEmailButtonTapped), for: .touchUpInside)
+        $0.isHidden = true
+    }
+    
+    private lazy var clearPasswordButton = UIButton().then {
+        $0.setImage(UIImage(named: "icn_x_circle"), for: .normal)
+        $0.addTarget(self, action: #selector(clearPasswordButtonTapped), for: .touchUpInside)
+        $0.isHidden = true
+    }
+    
+    private lazy var hiddenEyeButton = UIButton().then {
+        $0.setImage(UIImage(named: "icn_eye_slash"), for: .normal)
+        $0.addTarget(self, action: #selector(hiddenEyeButtonTapped), for: .touchUpInside)
+        $0.isHidden = true
     }
     
     private let loginButton = UIButton().then {
         $0.setTitle("로그인하기", for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        
         $0.isEnabled = false
-        //TODO: 버튼 활성화 시 UI 변경
         $0.setTitleColor(.gray2, for: .normal)
         $0.backgroundColor = .black
         $0.layer.cornerRadius = 3
@@ -99,8 +119,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
-        setLayout()
         setDelegate()
+        setLayout()
     }
 }
 
@@ -122,6 +142,9 @@ extension LoginViewController {
             nickNameButton
         )
         
+        emailTextField.addSubview(clearEmailButton)
+        passwordTextField.addSubviews(clearPasswordButton, hiddenEyeButton)
+        
         backButton.snp.makeConstraints{
             $0.width.equalTo(8)
             $0.height.equalTo(15)
@@ -141,12 +164,31 @@ extension LoginViewController {
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         
+        clearEmailButton.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.height.width.equalTo(20)
+            $0.trailing.equalToSuperview().offset(-20)
+        }
+        
         passwordTextField.snp.makeConstraints{
             $0.centerX.equalToSuperview()
             $0.top.equalTo(emailTextField.snp.bottom).offset(7)
             $0.height.equalTo(52)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
+        
+        hiddenEyeButton.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.height.width.equalTo(20)
+            $0.trailing.equalToSuperview().offset(-20)
+        }
+        
+        clearPasswordButton.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.height.width.equalTo(20)
+            $0.trailing.equalToSuperview().offset(-56)
+        }
+        
         
         loginButton.snp.makeConstraints{
             $0.centerX.equalToSuperview()
@@ -184,6 +226,25 @@ extension LoginViewController {
             $0.width.equalTo(128)
         }
     }
+    @objc
+    private func clearEmailButtonTapped() {
+        emailTextField.text = ""
+        print("여기야")
+    }
+    
+    @objc
+    private func clearPasswordButtonTapped() {
+        passwordTextField.text = ""
+    }
+    
+    @objc
+    private func hiddenEyeButtonTapped() {
+        if passwordTextField.isSecureTextEntry == true {
+            passwordTextField.isSecureTextEntry = false
+        } else {
+            passwordTextField.isSecureTextEntry = true
+        }
+    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
             textField.layer.borderColor = UIColor.gray2.cgColor
@@ -202,6 +263,20 @@ extension LoginViewController {
             loginButton.setTitleColor(.gray2, for: .normal)
             loginButton.backgroundColor = .black
             loginButton.layer.borderWidth = 1
+        }
+        
+        if emailTextField.hasText && emailTextField.isEditing {
+            clearEmailButton.isHidden = false
+        } else {
+            clearEmailButton.isHidden = true
+        }
+        
+        if passwordTextField.hasText && passwordTextField.isEditing {
+            clearPasswordButton.isHidden = false
+            hiddenEyeButton.isHidden = false
+        } else {
+            clearPasswordButton.isHidden = true
+            hiddenEyeButton.isHidden = true
         }
     }
     
@@ -230,7 +305,6 @@ extension LoginViewController {
         }
     }
 }
-
 
 private extension UITextField {
     func setPlaceholder(color: UIColor) {
