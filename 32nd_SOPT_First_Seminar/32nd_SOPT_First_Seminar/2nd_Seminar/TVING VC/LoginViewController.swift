@@ -209,6 +209,16 @@ extension LoginViewController {
         textField.layer.borderWidth = 0
     }
     
+    // Return 누르면 다음 텍스트필드로 이동
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.emailTextField {
+            self.passwordTextField.becomeFirstResponder()
+        } else if textField == self.passwordTextField {
+            self.passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
     private func setDelegate() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
