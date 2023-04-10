@@ -33,6 +33,7 @@
 		C38E7B7329E3A61200155E6A /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38E7B6629E3978F00155E6A /* Pretendard-Medium.otf */; };
 		C38E7B7429E3A61400155E6A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38E7B6729E397A600155E6A /* Pretendard-SemiBold.otf */; };
 		C38E7B7529E3A61700155E6A /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38E7B6529E3977D00155E6A /* Pretendard-Bold.otf */; };
+		C38E7B7729E3AAF100155E6A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		C38E7B6729E397A600155E6A /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		C38E7B6D29E398A500155E6A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C38E7B6F29E3A26300155E6A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				C38E7B6129E3950800155E6A /* LoginViewController.swift */,
+				C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */,
 			);
 			path = "TVING VC";
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				C38E7B5329E1376300155E6A /* SecondViewController_Closure.swift in Sources */,
 				C38E7B6229E3950800155E6A /* LoginViewController.swift in Sources */,
 				C309F86829D7FB03007BAF98 /* ViewController.swift in Sources */,
+				C38E7B7729E3AAF100155E6A /* WelcomeViewController.swift in Sources */,
 				C38E7B6E29E398A500155E6A /* Color.swift in Sources */,
 				C38E7B4D29E133AF00155E6A /* FirstViewController_DelegatePattern.swift in Sources */,
 				C309F86429D7FB03007BAF98 /* AppDelegate.swift in Sources */,

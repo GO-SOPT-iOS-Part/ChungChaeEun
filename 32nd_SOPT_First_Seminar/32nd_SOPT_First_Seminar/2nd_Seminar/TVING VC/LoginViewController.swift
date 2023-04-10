@@ -180,7 +180,7 @@ extension LoginViewController {
             $0.trailing.equalToSuperview().offset(-50)
             $0.height.equalTo(22)
             $0.width.equalTo(128)
-        }        
+        }
     }
 }
 
