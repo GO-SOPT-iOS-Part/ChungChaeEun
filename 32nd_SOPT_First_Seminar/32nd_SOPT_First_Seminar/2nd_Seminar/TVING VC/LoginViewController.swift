@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private let backButton = UIButton().then {
         $0.setImage(UIImage(named: "icn_before"), for: .normal)
@@ -22,7 +22,7 @@ final class LoginViewController: UIViewController {
         $0.textColor = .gray1
     }
     
-    private let emailTextField = UITextField().then {
+    private lazy var emailTextField = UITextField().then {
         $0.placeholder = "아이디"
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         $0.textColor = .gray2
@@ -32,10 +32,11 @@ final class LoginViewController: UIViewController {
         $0.addLeftPadding()
         $0.autocapitalizationType = .none
         $0.autocorrectionType = .no
-        // TODO: 선택 시 테두리 변경
+        $0.keyboardType = .emailAddress
+        $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
-    private let passwordTextField = UITextField().then {
+    private lazy var passwordTextField = UITextField().then {
         $0.placeholder = "비밀번호"
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         $0.textColor = .gray2
@@ -46,8 +47,8 @@ final class LoginViewController: UIViewController {
         $0.autocapitalizationType = .none
         $0.autocorrectionType = .no
         $0.isSecureTextEntry = true
-        // TODO: 선택 시 테두리 변경
         // TODO: clearButtonMode, hidden eye 설정
+        $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
     private let loginButton = UIButton().then {
@@ -99,6 +100,7 @@ final class LoginViewController: UIViewController {
         super.viewDidLoad()
         style()
         setLayout()
+        setDelegate()
     }
 }
 
@@ -180,6 +182,41 @@ extension LoginViewController {
             $0.trailing.equalToSuperview().offset(-50)
             $0.height.equalTo(22)
             $0.width.equalTo(128)
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+            textField.layer.borderColor = UIColor.gray2.cgColor
+            textField.layer.borderWidth = 1
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        // 키보드 업데이트 시 원하는 기능
+        if emailTextField.hasText && passwordTextField.hasText {
+            loginButton.layer.backgroundColor = UIColor.red1.cgColor
+            loginButton.setTitleColor(.white, for: .normal)
+            loginButton.layer.borderWidth = 0
+            loginButton.isEnabled = true
+        } else {
+            loginButton.isEnabled = false
+            loginButton.setTitleColor(.gray2, for: .normal)
+            loginButton.backgroundColor = .black
+            loginButton.layer.borderWidth = 1
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
+    }
+    
+    private func setDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
+    private func loginButtonEnable() {
+        if ((emailTextField.text?.isEmpty) == nil) && ((passwordTextField.text?.isEmpty) == nil) {
+            print("이거")
         }
     }
 }
