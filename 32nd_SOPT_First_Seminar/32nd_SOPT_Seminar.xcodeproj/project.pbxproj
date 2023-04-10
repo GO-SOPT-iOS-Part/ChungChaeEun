@@ -26,6 +26,7 @@
 		C38E7B5729E146D300155E6A /* ClickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B5629E146D300155E6A /* ClickViewController.swift */; };
 		C38E7B5929E146DB00155E6A /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B5829E146DB00155E6A /* GridViewController.swift */; };
 		C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B5A29E14C9400155E6A /* UIView+.swift */; };
+		C38E7B5D29E15B0C00155E6A /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B5C29E15B0C00155E6A /* BottomSheetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		C38E7B5629E146D300155E6A /* ClickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickViewController.swift; sourceTree = "<group>"; };
 		C38E7B5829E146DB00155E6A /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		C38E7B5A29E14C9400155E6A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		C38E7B5C29E15B0C00155E6A /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +86,10 @@
 			children = (
 				C38E7B3E29E07A0300155E6A /* Application */,
 				C38E7B3F29E07A3000155E6A /* Storyboard */,
+				C38E7B5E29E3932A00155E6A /* Extension */,
+				C38E7B5F29E3935E00155E6A /* Resource */,
 				C38E7B4229E07A7D00155E6A /* 1st_Seminar */,
 				C38E7B4129E07A6400155E6A /* 2nd_Seminar */,
-				C309F86C29D7FB06007BAF98 /* Assets.xcassets */,
-				C309F87129D7FB06007BAF98 /* Info.plist */,
-				C38E7B5A29E14C9400155E6A /* UIView+.swift */,
 			);
 			path = 32nd_SOPT_First_Seminar;
 			sourceTree = "<group>";
@@ -130,6 +131,7 @@
 				C38E7B5229E1376300155E6A /* SecondViewController_Closure.swift */,
 				C38E7B5429E146CE00155E6A /* ClickTimeViewController.swift */,
 				C38E7B5629E146D300155E6A /* ClickViewController.swift */,
+				C38E7B5C29E15B0C00155E6A /* BottomSheetViewController.swift */,
 				C38E7B5829E146DB00155E6A /* GridViewController.swift */,
 			);
 			path = 2nd_Seminar;
@@ -141,6 +143,23 @@
 				C38E7B4029E07A4000155E6A /* ViewController */,
 			);
 			path = 1st_Seminar;
+			sourceTree = "<group>";
+		};
+		C38E7B5E29E3932A00155E6A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C38E7B5A29E14C9400155E6A /* UIView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C38E7B5F29E3935E00155E6A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C309F86C29D7FB06007BAF98 /* Assets.xcassets */,
+				C309F87129D7FB06007BAF98 /* Info.plist */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38E7B5529E146CE00155E6A /* ClickTimeViewController.swift in Sources */,
+				C38E7B5D29E15B0C00155E6A /* BottomSheetViewController.swift in Sources */,
 				C38E7B5329E1376300155E6A /* SecondViewController_Closure.swift in Sources */,
 				C309F86829D7FB03007BAF98 /* ViewController.swift in Sources */,
 				C38E7B4D29E133AF00155E6A /* FirstViewController_DelegatePattern.swift in Sources */,
