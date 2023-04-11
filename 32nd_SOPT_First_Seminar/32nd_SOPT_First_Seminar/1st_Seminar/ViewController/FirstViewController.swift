@@ -67,7 +67,7 @@ class FirstViewController: UIViewController {
         // MARK: - 속성 추가
         textField.layer.borderWidth = 1
         textField.layer.cornerRadius = 20
-        textField.addLeftPadding()
+        textField.addLeftPadding1()
         textField.autocorrectionType = .no
         return textField
     }()
@@ -162,7 +162,7 @@ private extension FirstViewController {
 
 
 private extension UITextField {
-    func addLeftPadding() {
+    func addLeftPadding1() {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: self.frame.height))
         self.leftView = paddingView
         self.leftViewMode = ViewMode.always

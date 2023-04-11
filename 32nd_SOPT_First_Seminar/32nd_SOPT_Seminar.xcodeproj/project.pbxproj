@@ -34,6 +34,10 @@
 		C38E7B7429E3A61400155E6A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38E7B6729E397A600155E6A /* Pretendard-SemiBold.otf */; };
 		C38E7B7529E3A61700155E6A /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38E7B6529E3977D00155E6A /* Pretendard-Bold.otf */; };
 		C38E7B7729E3AAF100155E6A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */; };
+		C3B0BE5829E5270900BF613A /* NickNameBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */; };
+		C3B0BE5A29E528E000BF613A /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5929E528E000BF613A /* UITextField+.swift */; };
+		C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5B29E5290700BF613A /* UIButton+.swift */; };
+		C3B0BE5E29E52E1400BF613A /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5D29E52E1400BF613A /* NickNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,10 @@
 		C38E7B6D29E398A500155E6A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C38E7B6F29E3A26300155E6A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameBottomSheetViewController.swift; sourceTree = "<group>"; };
+		C3B0BE5929E528E000BF613A /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		C3B0BE5B29E5290700BF613A /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		C3B0BE5D29E52E1400BF613A /* NickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +147,6 @@
 		C38E7B4129E07A6400155E6A /* 2nd_Seminar */ = {
 			isa = PBXGroup;
 			children = (
-				C38E7B7829E505AA00155E6A /* New Group */,
 				C38E7B4C29E133AF00155E6A /* FirstViewController_DelegatePattern.swift */,
 				C38E7B4E29E1343000155E6A /* SecondViewController_DelegatePattern.swift */,
 				C38E7B5029E1375500155E6A /* FirstViewController_Closure.swift */,
@@ -165,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				C38E7B5A29E14C9400155E6A /* UIView+.swift */,
+				C3B0BE5929E528E000BF613A /* UITextField+.swift */,
+				C3B0BE5B29E5290700BF613A /* UIButton+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -184,6 +193,8 @@
 			children = (
 				C38E7B6129E3950800155E6A /* LoginViewController.swift */,
 				C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */,
+				C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */,
+				C3B0BE5D29E52E1400BF613A /* NickNameView.swift */,
 			);
 			path = "TVING VC";
 			sourceTree = "<group>";
@@ -214,13 +225,6 @@
 				C38E7B6D29E398A500155E6A /* Color.swift */,
 			);
 			path = Const;
-			sourceTree = "<group>";
-		};
-		C38E7B7829E505AA00155E6A /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +321,8 @@
 				C38E7B6E29E398A500155E6A /* Color.swift in Sources */,
 				C38E7B4D29E133AF00155E6A /* FirstViewController_DelegatePattern.swift in Sources */,
 				C309F86429D7FB03007BAF98 /* AppDelegate.swift in Sources */,
+				C3B0BE5A29E528E000BF613A /* UITextField+.swift in Sources */,
+				C3B0BE5829E5270900BF613A /* NickNameBottomSheetViewController.swift in Sources */,
 				C309F86629D7FB03007BAF98 /* SceneDelegate.swift in Sources */,
 				C38E7B4F29E1343000155E6A /* SecondViewController_DelegatePattern.swift in Sources */,
 				C38E7B5729E146D300155E6A /* ClickViewController.swift in Sources */,
@@ -324,7 +330,9 @@
 				C38E7B5129E1375500155E6A /* FirstViewController_Closure.swift in Sources */,
 				C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */,
 				C309F87C29D80FA5007BAF98 /* SecondViewController.swift in Sources */,
+				C3B0BE5E29E52E1400BF613A /* NickNameView.swift in Sources */,
 				C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */,
+				C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

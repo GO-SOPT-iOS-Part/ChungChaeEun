@@ -326,30 +326,3 @@ extension LoginViewController {
         self.present(welcomeViewController, animated: true)
     }
 }
-
-private extension UITextField {
-    func setPlaceholder(color: UIColor) {
-        guard let string = self.placeholder else {
-            return
-        }
-        attributedPlaceholder = NSAttributedString(string: string, attributes: [.foregroundColor: color])
-    }
-    
-    func addLeftPadding() {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 22, height: self.frame.height))
-        self.leftView = paddingView
-        self.leftViewMode = ViewMode.always
-    }
-}
-
-private extension UIButton {
-    func setUnderline() {
-        guard let title = title(for: .normal) else { return }
-        let attributedString = NSMutableAttributedString(string: title)
-        attributedString.addAttribute(.underlineStyle,
-                                      value: NSUnderlineStyle.single.rawValue,
-                                      range: NSRange(location: 0, length: title.count)
-        )
-        setAttributedTitle(attributedString, for: .normal)
-    }
-}
