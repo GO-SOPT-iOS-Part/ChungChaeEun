@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Then
+import SnapKit
+
 final class WelcomeViewController: UIViewController {
     
     private let tvingImageView = UIImageView().then {
@@ -14,7 +17,7 @@ final class WelcomeViewController: UIViewController {
     }
     
     private let welcomeLabel = UILabel().then {
-        $0.text = "0000000 님\n반가워요!"
+        $0.text = "님\n반가워요!"
         $0.textAlignment = .center
         $0.numberOfLines = 2
         $0.font = UIFont(name: "Pretendard-Bold", size: 23)
@@ -29,26 +32,33 @@ final class WelcomeViewController: UIViewController {
         $0.backgroundColor = .red1
         $0.layer.cornerRadius = 3
     }
+    var name: String?
+    
+    func nameDataBind() {
+        guard let name = self.name else { return }
+        welcomeLabel.text = "\(name) 님\n반가워요!"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         style()
         setLayout()
+        nameDataBind()
     }
-
 }
 
 extension WelcomeViewController {
+    
     private func style() {
         view.backgroundColor = .black
     }
     
     private func setLayout() {
         view.addSubviews(
-        tvingImageView,
-        welcomeLabel,
-        mainButton)
+            tvingImageView,
+            welcomeLabel,
+            mainButton)
         
         tvingImageView.snp.makeConstraints{
             $0.top.equalToSuperview().offset(58)
@@ -68,4 +78,3 @@ extension WelcomeViewController {
         }
     }
 }
-
