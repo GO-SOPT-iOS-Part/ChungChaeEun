@@ -73,7 +73,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.isHidden = true
     }
     
-    private let loginButton = UIButton().then {
+    private lazy var loginButton = UIButton().then {
         $0.setTitle("로그인하기", for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         $0.isEnabled = false
@@ -82,6 +82,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.layer.cornerRadius = 3
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.gray4.cgColor
+        $0.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     private let findIdButton = UIButton().then {
@@ -229,7 +230,6 @@ extension LoginViewController {
     @objc
     private func clearEmailButtonTapped() {
         emailTextField.text = ""
-        print("여기야")
     }
     
     @objc
@@ -303,6 +303,15 @@ extension LoginViewController {
         if ((emailTextField.text?.isEmpty) == nil) && ((passwordTextField.text?.isEmpty) == nil) {
             print("이거")
         }
+    }
+    
+    @objc private func loginButtonTapped() {
+        presentToWelcomeViewController()
+    }
+    @objc private func presentToWelcomeViewController() {
+        let welcomeViewController = WelcomeViewController()
+        welcomeViewController.modalPresentationStyle = .popover
+        self.present(welcomeViewController, animated: true)
     }
 }
 

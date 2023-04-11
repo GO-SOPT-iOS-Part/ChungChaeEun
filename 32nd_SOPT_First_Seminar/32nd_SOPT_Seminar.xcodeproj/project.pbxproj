@@ -139,6 +139,7 @@
 		C38E7B4129E07A6400155E6A /* 2nd_Seminar */ = {
 			isa = PBXGroup;
 			children = (
+				C38E7B7829E505AA00155E6A /* New Group */,
 				C38E7B4C29E133AF00155E6A /* FirstViewController_DelegatePattern.swift */,
 				C38E7B4E29E1343000155E6A /* SecondViewController_DelegatePattern.swift */,
 				C38E7B5029E1375500155E6A /* FirstViewController_Closure.swift */,
@@ -213,6 +214,13 @@
 				C38E7B6D29E398A500155E6A /* Color.swift */,
 			);
 			path = Const;
+			sourceTree = "<group>";
+		};
+		C38E7B7829E505AA00155E6A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
