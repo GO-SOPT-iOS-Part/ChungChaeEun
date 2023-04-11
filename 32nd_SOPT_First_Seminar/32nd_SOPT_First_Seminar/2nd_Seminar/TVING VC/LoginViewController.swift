@@ -116,7 +116,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.titleLabel!.textAlignment = .center
         $0.setUnderline()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -230,11 +230,18 @@ extension LoginViewController {
     @objc
     private func clearEmailButtonTapped() {
         emailTextField.text = ""
+        loginButton.isEnabled = false
+        loginButtonIsEnabled()
+        clearEmailButton.isHidden = true
     }
     
     @objc
     private func clearPasswordButtonTapped() {
         passwordTextField.text = ""
+        loginButton.isEnabled = false
+        loginButtonIsEnabled()
+        clearPasswordButton.isHidden = true
+        hiddenEyeButton.isHidden = true
     }
     
     @objc
@@ -247,22 +254,30 @@ extension LoginViewController {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-            textField.layer.borderColor = UIColor.gray2.cgColor
-            textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.gray2.cgColor
+        textField.layer.borderWidth = 1
+    }
+    
+    func loginButtonIsEnabled() {
+        if loginButton.isEnabled == true {
+            loginButton.layer.backgroundColor = UIColor.red1.cgColor
+            loginButton.setTitleColor(.white, for: .normal)
+            loginButton.layer.borderWidth = 0
+        } else {
+            loginButton.setTitleColor(.gray2, for: .normal)
+            loginButton.backgroundColor = .black
+            loginButton.layer.borderWidth = 1
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         // 키보드 업데이트 시 원하는 기능
         if emailTextField.hasText && passwordTextField.hasText {
-            loginButton.layer.backgroundColor = UIColor.red1.cgColor
-            loginButton.setTitleColor(.white, for: .normal)
-            loginButton.layer.borderWidth = 0
             loginButton.isEnabled = true
+            loginButtonIsEnabled()
         } else {
             loginButton.isEnabled = false
-            loginButton.setTitleColor(.gray2, for: .normal)
-            loginButton.backgroundColor = .black
-            loginButton.layer.borderWidth = 1
+            loginButtonIsEnabled()
         }
         
         if emailTextField.hasText && emailTextField.isEditing {
@@ -299,17 +314,14 @@ extension LoginViewController {
         passwordTextField.delegate = self
     }
     
-    private func loginButtonEnable() {
-        if ((emailTextField.text?.isEmpty) == nil) && ((passwordTextField.text?.isEmpty) == nil) {
-            print("이거")
-        }
-    }
-    
     @objc private func loginButtonTapped() {
         presentToWelcomeViewController()
     }
-    @objc private func presentToWelcomeViewController() {
+    
+    @objc func presentToWelcomeViewController() {
         let welcomeViewController = WelcomeViewController()
+        guard let name = emailTextField.text else { return }
+        welcomeViewController.name = name
         welcomeViewController.modalPresentationStyle = .popover
         self.present(welcomeViewController, animated: true)
     }
