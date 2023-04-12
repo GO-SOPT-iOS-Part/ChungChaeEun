@@ -31,6 +31,12 @@ class NickNameView: UIView, UITextFieldDelegate {
         $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
+    private lazy var clearNickNameButton = UIButton().then {
+        $0.setImage(UIImage(named: "icn_x_circle"), for: .normal)
+        $0.addTarget(self, action: #selector(clearNickNameButtonTapped), for: .touchUpInside)
+        $0.isHidden = true
+    }
+    
     private lazy var saveButton = UIButton().then {
         $0.setTitle("저장하기", for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-SemiBold", size: 14)
@@ -65,6 +71,8 @@ class NickNameView: UIView, UITextFieldDelegate {
             saveButton
         )
         
+        nickNameTextField.addSubview(clearNickNameButton)
+        
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(50)
             $0.leading.equalToSuperview().offset(20)
@@ -73,6 +81,11 @@ class NickNameView: UIView, UITextFieldDelegate {
             $0.top.equalTo(titleLabel.snp.bottom).offset(21)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
+        }
+        clearNickNameButton.snp.makeConstraints{
+            $0.centerY.equalToSuperview()
+            $0.height.width.equalTo(20)
+            $0.trailing.equalToSuperview().offset(-20)
         }
         saveButton.snp.makeConstraints{
             $0.top.equalTo(nickNameTextField.snp.bottom).offset(214)
@@ -90,6 +103,12 @@ class NickNameView: UIView, UITextFieldDelegate {
             saveButton.isEnabled = false
             saveButtonIsEnabled()
         }
+        
+        if nickNameTextField.hasText && nickNameTextField.isEditing {
+            clearNickNameButton.isHidden = false
+        } else {
+            clearNickNameButton.isHidden = true
+        }
     }
     
     func saveButtonIsEnabled(){
@@ -102,6 +121,13 @@ class NickNameView: UIView, UITextFieldDelegate {
             saveButton.backgroundColor = .black
             saveButton.layer.borderWidth = 1
         }
+    }
+    
+    @objc private func clearNickNameButtonTapped() {
+        nickNameTextField.text = ""
+        saveButton.isEnabled = false
+        saveButtonIsEnabled()
+        clearNickNameButton.isHidden = true
     }
     
     private func setDelegate() {
