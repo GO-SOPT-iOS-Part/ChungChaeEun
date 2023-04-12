@@ -109,12 +109,13 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.textColor = .gray3
     }
     
-    private let nickNameButton = UIButton().then {
+    private lazy var nickNameButton = UIButton().then {
         $0.setTitle("닉네임 만들러가기", for: .normal)
         $0.setTitleColor(.gray2, for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-Regular", size: 14)
         $0.titleLabel!.textAlignment = .center
         $0.setUnderline()
+        $0.addTarget(self, action: #selector(nickNameButtonTapped), for: .touchUpInside)
     }
     
     override func viewDidLoad() {
@@ -324,5 +325,15 @@ extension LoginViewController {
         welcomeViewController.name = name
         welcomeViewController.modalPresentationStyle = .popover
         self.present(welcomeViewController, animated: true)
+    }
+    
+    @objc func nickNameButtonTapped() {
+        presentToNickNameBottomSheetViewController()
+    }
+    
+    @objc func presentToNickNameBottomSheetViewController(){
+        let nickNameBottomSheetViewController = NickNameBottomSheetViewController()
+        nickNameBottomSheetViewController.modalPresentationStyle = .popover
+        self.present(nickNameBottomSheetViewController, animated: true)
     }
 }
