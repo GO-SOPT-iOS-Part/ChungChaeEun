@@ -37,7 +37,7 @@ class NickNameView: UIView, UITextFieldDelegate {
         $0.isHidden = true
     }
     
-    private lazy var saveButton = UIButton().then {
+    lazy var saveButton = UIButton().then {
         $0.setTitle("저장하기", for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         $0.isEnabled = false
@@ -46,7 +46,7 @@ class NickNameView: UIView, UITextFieldDelegate {
         $0.layer.cornerRadius = 12
         $0.layer.borderWidth = 1
         $0.layer.borderColor = UIColor.gray4.cgColor
-        $0.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+//        $0.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
     
     override init(frame: CGRect) {
@@ -134,7 +134,13 @@ class NickNameView: UIView, UITextFieldDelegate {
         nickNameTextField.delegate = self
     }
     
-    @objc private func saveButtonTapped() {
-        
-    }
+//    @objc func saveButtonTapped() {
+//        presentToWelcomeViewController()
+//        let welcomeViewController = WelcomeViewController()
+//        guard let name = emailTextField.text else { return }
+//        welcomeViewController.name = name
+//        welcomeViewController.modalPresentationStyle = .popover
+//        self.present(welcomeViewController, animated: true)
+//        self.dismiss(animated: true, completion: nil)
+//    }
 }

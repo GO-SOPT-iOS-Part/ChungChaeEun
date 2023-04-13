@@ -27,6 +27,7 @@ final class NickNameBottomSheetViewController: UIViewController {
     override func loadView() {
         super.loadView()
         setLayout()
+        setAddTarget()
     }
 }
 
@@ -38,6 +39,16 @@ extension NickNameBottomSheetViewController {
 //            $0.height.equalTo(UIScreen.main.bounds.height / 2)
 //            $0.top.equalTo(UIScreen.main.bounds.height / 2)
             $0.edges.equalToSuperview()
+        }
+    }
+    
+    private func setAddTarget(){
+        nickNameView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func saveButtonTapped() {
+        if nickNameView.saveButton.isEnabled {
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
