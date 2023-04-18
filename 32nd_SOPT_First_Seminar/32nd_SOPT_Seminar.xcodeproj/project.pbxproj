@@ -157,7 +157,7 @@
 				C38E7B5629E146D300155E6A /* ClickViewController.swift */,
 				C38E7B5C29E15B0C00155E6A /* BottomSheetViewController.swift */,
 				C38E7B5829E146DB00155E6A /* GridViewController.swift */,
-				C38E7B6029E394F500155E6A /* TVING VC */,
+				C38E7B6029E394F500155E6A /* TVING */,
 			);
 			path = 2nd_Seminar;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		C38E7B6029E394F500155E6A /* TVING VC */ = {
+		C38E7B6029E394F500155E6A /* TVING */ = {
 			isa = PBXGroup;
 			children = (
 				C38E7B6129E3950800155E6A /* LoginViewController.swift */,
@@ -199,7 +199,7 @@
 				C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */,
 				C3B0BE5D29E52E1400BF613A /* NickNameView.swift */,
 			);
-			path = "TVING VC";
+			path = TVING;
 			sourceTree = "<group>";
 		};
 		C38E7B6329E3968C00155E6A /* Fonts */ = {
