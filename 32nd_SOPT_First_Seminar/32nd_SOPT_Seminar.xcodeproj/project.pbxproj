@@ -34,6 +34,7 @@
 		C38E7B7429E3A61400155E6A /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38E7B6729E397A600155E6A /* Pretendard-SemiBold.otf */; };
 		C38E7B7529E3A61700155E6A /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38E7B6529E3977D00155E6A /* Pretendard-Bold.otf */; };
 		C38E7B7729E3AAF100155E6A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */; };
+		C394531A29EE3FAF00FC9005 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C394531929EE3FAF00FC9005 /* String+.swift */; };
 		C3B0BE5829E5270900BF613A /* NickNameBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */; };
 		C3B0BE5A29E528E000BF613A /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5929E528E000BF613A /* UITextField+.swift */; };
 		C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5B29E5290700BF613A /* UIButton+.swift */; };
@@ -67,6 +68,7 @@
 		C38E7B6D29E398A500155E6A /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C38E7B6F29E3A26300155E6A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		C394531929EE3FAF00FC9005 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameBottomSheetViewController.swift; sourceTree = "<group>"; };
 		C3B0BE5929E528E000BF613A /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		C3B0BE5B29E5290700BF613A /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				C38E7B5A29E14C9400155E6A /* UIView+.swift */,
 				C3B0BE5929E528E000BF613A /* UITextField+.swift */,
 				C3B0BE5B29E5290700BF613A /* UIButton+.swift */,
+				C394531929EE3FAF00FC9005 /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				C38E7B4D29E133AF00155E6A /* FirstViewController_DelegatePattern.swift in Sources */,
 				C309F86429D7FB03007BAF98 /* AppDelegate.swift in Sources */,
 				C3B0BE5A29E528E000BF613A /* UITextField+.swift in Sources */,
+				C394531A29EE3FAF00FC9005 /* String+.swift in Sources */,
 				C3B0BE5829E5270900BF613A /* NickNameBottomSheetViewController.swift in Sources */,
 				C309F86629D7FB03007BAF98 /* SceneDelegate.swift in Sources */,
 				C38E7B4F29E1343000155E6A /* SecondViewController_DelegatePattern.swift in Sources */,
