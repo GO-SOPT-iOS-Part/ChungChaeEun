@@ -333,7 +333,18 @@ extension LoginViewController {
     
     @objc func presentToNickNameBottomSheetViewController(){
         let nickNameBottomSheetViewController = NickNameBottomSheetViewController()
-        nickNameBottomSheetViewController.modalPresentationStyle = .popover
+        nickNameBottomSheetViewController.modalPresentationStyle = .pageSheet
+        if let sheet = nickNameBottomSheetViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.delegate = self
+            sheet.prefersGrabberVisible = true
+        }
         self.present(nickNameBottomSheetViewController, animated: true)
+    }
+}
+
+extension LoginViewController: UISheetPresentationControllerDelegate {
+    func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
+        print(sheetPresentationController.selectedDetentIdentifier == .large ? "large" : "medium")
     }
 }
