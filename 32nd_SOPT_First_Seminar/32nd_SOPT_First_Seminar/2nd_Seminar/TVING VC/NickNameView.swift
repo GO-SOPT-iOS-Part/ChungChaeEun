@@ -11,6 +11,7 @@ import SnapKit
 import Then
 
 class NickNameView: UIView, UITextFieldDelegate {
+    
     private let titleLabel = UILabel().then {
         $0.text = "닉네임을 입력해주세요"
         $0.textColor = .black
@@ -143,4 +144,15 @@ class NickNameView: UIView, UITextFieldDelegate {
 //        self.present(welcomeViewController, animated: true)
 //        self.dismiss(animated: true, completion: nil)
 //    }
+}
+
+extension NickNameView {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let utf8Char = string.cString(using: .utf8)
+        let isBackSpace = strcmp(utf8Char, "\\b")
+        if string.isOnlyKorean() || isBackSpace == -92{
+            return true
+        }
+        return false
+    }
 }

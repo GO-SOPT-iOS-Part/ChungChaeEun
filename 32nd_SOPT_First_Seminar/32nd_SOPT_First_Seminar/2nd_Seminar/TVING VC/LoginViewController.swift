@@ -341,6 +341,15 @@ extension LoginViewController {
         }
         self.present(nickNameBottomSheetViewController, animated: true)
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            let utf8Char = string.cString(using: .utf8)
+            let isBackSpace = strcmp(utf8Char, "\\b")
+            if string.isContainNumberAndAlphabet() || isBackSpace == -92{
+                return true
+            }
+            return false
+        }
 }
 
 extension LoginViewController: UISheetPresentationControllerDelegate {
