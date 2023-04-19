@@ -18,7 +18,7 @@ class NickNameView: UIView, UITextFieldDelegate {
         $0.font = UIFont(name: "Pretendard-Medium", size: 23)
     }
     
-    private lazy var nickNameTextField = UITextField().then {
+    lazy var nickNameTextField = UITextField().then {
         $0.placeholder = "닉네임"
         $0.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         $0.textColor = .gray4

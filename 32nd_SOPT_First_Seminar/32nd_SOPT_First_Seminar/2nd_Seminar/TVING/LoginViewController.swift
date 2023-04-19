@@ -118,6 +118,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         $0.addTarget(self, action: #selector(nickNameButtonTapped), for: .touchUpInside)
     }
     
+    var nickName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -321,8 +323,13 @@ extension LoginViewController {
     
     @objc func presentToWelcomeViewController() {
         let welcomeViewController = WelcomeViewController()
-        guard let name = emailTextField.text else { return }
-        welcomeViewController.name = name
+        if ((nickName?.isEmpty) != nil) {
+            guard let name = nickName else { return }
+            welcomeViewController.name = name
+        } else {
+            guard let name = emailTextField.text else { return }
+            welcomeViewController.name = name
+        }
         welcomeViewController.modalPresentationStyle = .popover
         self.present(welcomeViewController, animated: true)
     }
@@ -334,6 +341,7 @@ extension LoginViewController {
     @objc func presentToNickNameBottomSheetViewController(){
         let nickNameBottomSheetViewController = NickNameBottomSheetViewController()
         nickNameBottomSheetViewController.modalPresentationStyle = .pageSheet
+        nickNameBottomSheetViewController.delegate = self
         if let sheet = nickNameBottomSheetViewController.sheetPresentationController {
             sheet.detents = [.medium()]
             sheet.delegate = self
@@ -355,5 +363,12 @@ extension LoginViewController {
 extension LoginViewController: UISheetPresentationControllerDelegate {
     func sheetPresentationControllerDidChangeSelectedDetentIdentifier(_ sheetPresentationController: UISheetPresentationController) {
         print(sheetPresentationController.selectedDetentIdentifier == .large ? "large" : "medium")
+    }
+}
+
+extension LoginViewController: DataBindNickName {
+    func dataBindNickName(text: String) {
+        self.nickName = text
+        print(nickName!)
     }
 }

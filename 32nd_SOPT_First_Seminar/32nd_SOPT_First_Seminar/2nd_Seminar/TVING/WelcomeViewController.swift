@@ -16,7 +16,7 @@ final class WelcomeViewController: UIViewController {
         $0.image = UIImage(named: "tving")
     }
     
-    private let welcomeLabel = UILabel().then {
+    let welcomeLabel = UILabel().then {
         $0.text = "님\n반가워요!"
         $0.textAlignment = .center
         $0.numberOfLines = 2
@@ -35,8 +35,13 @@ final class WelcomeViewController: UIViewController {
     var name: String?
     
     func nameDataBind() {
-        guard let name = self.name else { return }
-        welcomeLabel.text = "\(name) 님\n반가워요!"
+//        if LoginViewController().nickName.isEmpty {
+            guard let name = self.name else { return }
+            welcomeLabel.text = "\(name) 님\n반가워요!"
+//        } else {
+//            guard let nickName = LoginViewController().nickName else { return }
+//            welcomeLabel.text = "\(nickName) 님\n반가워요!"
+//        }
     }
 
     override func viewDidLoad() {

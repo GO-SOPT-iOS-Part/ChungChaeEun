@@ -10,12 +10,17 @@ import UIKit
 import SnapKit
 import Then
 
+protocol DataBindNickName: AnyObject {
+    func dataBindNickName(text: String)
+}
+
 final class NickNameBottomSheetViewController: UIViewController {
     
     private var nickNameView = NickNameView().then {
         $0.layer.cornerRadius = 20
     }
     
+    weak var delegate: DataBindNickName?    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +41,6 @@ extension NickNameBottomSheetViewController {
         view.addSubview(nickNameView)
         
         nickNameView.snp.makeConstraints{
-//            $0.height.equalTo(UIScreen.main.bounds.height / 2)
-//            $0.top.equalTo(UIScreen.main.bounds.height / 2)
             $0.edges.equalToSuperview()
         }
     }
@@ -49,6 +52,9 @@ extension NickNameBottomSheetViewController {
     @objc func saveButtonTapped() {
         if nickNameView.saveButton.isEnabled {
             self.dismiss(animated: true, completion: nil)
+        }
+        if let text = nickNameView.nickNameTextField.text {
+            delegate?.dataBindNickName(text: text)
         }
     }
 }
