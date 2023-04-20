@@ -35,13 +35,8 @@ final class WelcomeViewController: UIViewController {
     var name: String?
     
     func nameDataBind() {
-//        if LoginViewController().nickName.isEmpty {
             guard let name = self.name else { return }
             welcomeLabel.text = "\(name) 님\n반가워요!"
-//        } else {
-//            guard let nickName = LoginViewController().nickName else { return }
-//            welcomeLabel.text = "\(nickName) 님\n반가워요!"
-//        }
     }
 
     override func viewDidLoad() {

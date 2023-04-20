@@ -26,7 +26,6 @@
 		C38E7B5729E146D300155E6A /* ClickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B5629E146D300155E6A /* ClickViewController.swift */; };
 		C38E7B5929E146DB00155E6A /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B5829E146DB00155E6A /* GridViewController.swift */; };
 		C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B5A29E14C9400155E6A /* UIView+.swift */; };
-		C38E7B5D29E15B0C00155E6A /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B5C29E15B0C00155E6A /* BottomSheetViewController.swift */; };
 		C38E7B6229E3950800155E6A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B6129E3950800155E6A /* LoginViewController.swift */; };
 		C38E7B6E29E398A500155E6A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38E7B6D29E398A500155E6A /* Color.swift */; };
 		C38E7B7229E3A61000155E6A /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C38E7B6429E396C100155E6A /* Pretendard-Regular.otf */; };
@@ -59,7 +58,6 @@
 		C38E7B5629E146D300155E6A /* ClickViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickViewController.swift; sourceTree = "<group>"; };
 		C38E7B5829E146DB00155E6A /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		C38E7B5A29E14C9400155E6A /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
-		C38E7B5C29E15B0C00155E6A /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		C38E7B6129E3950800155E6A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C38E7B6429E396C100155E6A /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		C38E7B6529E3977D00155E6A /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				C38E7B5229E1376300155E6A /* SecondViewController_Closure.swift */,
 				C38E7B5429E146CE00155E6A /* ClickTimeViewController.swift */,
 				C38E7B5629E146D300155E6A /* ClickViewController.swift */,
-				C38E7B5C29E15B0C00155E6A /* BottomSheetViewController.swift */,
 				C38E7B5829E146DB00155E6A /* GridViewController.swift */,
 				C38E7B6029E394F500155E6A /* TVING */,
 			);
@@ -316,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38E7B5529E146CE00155E6A /* ClickTimeViewController.swift in Sources */,
-				C38E7B5D29E15B0C00155E6A /* BottomSheetViewController.swift in Sources */,
 				C38E7B5329E1376300155E6A /* SecondViewController_Closure.swift in Sources */,
 				C38E7B6229E3950800155E6A /* LoginViewController.swift in Sources */,
 				C309F86829D7FB03007BAF98 /* ViewController.swift in Sources */,

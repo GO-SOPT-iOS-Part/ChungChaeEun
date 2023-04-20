@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class LoginViewController: UIViewController, UITextFieldDelegate {
+final class LoginViewController: UIViewController {
     
     private let backButton = UIButton().then {
         $0.setImage(UIImage(named: "icn_before"), for: .normal)
@@ -249,16 +249,7 @@ extension LoginViewController {
     
     @objc
     private func hiddenEyeButtonTapped() {
-        if passwordTextField.isSecureTextEntry == true {
-            passwordTextField.isSecureTextEntry = false
-        } else {
-            passwordTextField.isSecureTextEntry = true
-        }
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.layer.borderColor = UIColor.gray2.cgColor
-        textField.layer.borderWidth = 1
+            passwordTextField.isSecureTextEntry.toggle()
     }
     
     func loginButtonIsEnabled() {
@@ -271,50 +262,6 @@ extension LoginViewController {
             loginButton.backgroundColor = .black
             loginButton.layer.borderWidth = 1
         }
-    }
-    
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        // 키보드 업데이트 시 원하는 기능
-        if emailTextField.hasText && passwordTextField.hasText {
-            loginButton.isEnabled = true
-            loginButtonIsEnabled()
-        } else {
-            loginButton.isEnabled = false
-            loginButtonIsEnabled()
-        }
-        
-        if emailTextField.hasText && emailTextField.isEditing {
-            clearEmailButton.isHidden = false
-        } else {
-            clearEmailButton.isHidden = true
-        }
-        
-        if passwordTextField.hasText && passwordTextField.isEditing {
-            clearPasswordButton.isHidden = false
-            hiddenEyeButton.isHidden = false
-        } else {
-            clearPasswordButton.isHidden = true
-            hiddenEyeButton.isHidden = true
-        }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        textField.layer.borderWidth = 0
-    }
-    
-    // Return 누르면 다음 텍스트필드로 이동
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == self.emailTextField {
-            self.passwordTextField.becomeFirstResponder()
-        } else if textField == self.passwordTextField {
-            self.passwordTextField.resignFirstResponder()
-        }
-        return true
-    }
-    
-    private func setDelegate() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
     }
     
     @objc private func loginButtonTapped() {
@@ -370,5 +317,57 @@ extension LoginViewController: DataBindNickName {
     func dataBindNickName(text: String) {
         self.nickName = text
         print(nickName!)
+    }
+}
+
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.gray2.cgColor
+        textField.layer.borderWidth = 1
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        // 키보드 업데이트 시 원하는 기능
+        if emailTextField.hasText && passwordTextField.hasText {
+            loginButton.isEnabled = true
+            loginButtonIsEnabled()
+        } else {
+            loginButton.isEnabled = false
+            loginButtonIsEnabled()
+        }
+        
+        if emailTextField.hasText && emailTextField.isEditing {
+            clearEmailButton.isHidden = false
+        } else {
+            clearEmailButton.isHidden = true
+        }
+        
+        if passwordTextField.hasText && passwordTextField.isEditing {
+            clearPasswordButton.isHidden = false
+            hiddenEyeButton.isHidden = false
+        } else {
+            clearPasswordButton.isHidden = true
+            hiddenEyeButton.isHidden = true
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 0
+    }
+    
+    // Return 누르면 다음 텍스트필드로 이동
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == self.emailTextField {
+            self.passwordTextField.becomeFirstResponder()
+        } else if textField == self.passwordTextField {
+            self.passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    private func setDelegate() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
 }

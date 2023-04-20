@@ -49,12 +49,17 @@ final class ClickViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        style()
         layout()
     }
 }
 
 extension ClickViewController {
+    
+    private func style() {
+        view.backgroundColor = .white
+    }
+    
     private func layout() {
         view.addSubviews(titleLabel, clickButton, backButton)
         
