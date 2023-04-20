@@ -14,19 +14,19 @@ extension String {
         return emailTest.evaluate(with: self)
     }
     
-    func isContainEnglish() -> Bool {
+    func containsEnglish() -> Bool {
         let pattern = "[A-Za-z]+"
         guard self.range(of: pattern, options: .regularExpression) != nil else { return false }
         return true
     }
     
-    func isContainNumber() -> Bool {
+    func containsNumber() -> Bool {
         let pattern = ".*[0-9]+.*"
         guard self.range(of: pattern, options: .regularExpression) != nil else { return false }
         return true
     }
     
-    func isContainNumberAndAlphabet() -> Bool {
+    func containsNumberAndAlphabet() -> Bool {
         let pattern = "^[0-9a-zA-Z]*$"
         guard self.range(of: pattern, options: .regularExpression) != nil else { return false }
         return true
