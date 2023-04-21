@@ -116,6 +116,20 @@
 			path = 32nd_SOPT_First_Seminar;
 			sourceTree = "<group>";
 		};
+		C31A1F2629F264C500421EAD /* Seminar */ = {
+			isa = PBXGroup;
+			children = (
+				C38E7B4C29E133AF00155E6A /* FirstViewController_DelegatePattern.swift */,
+				C38E7B4E29E1343000155E6A /* SecondViewController_DelegatePattern.swift */,
+				C38E7B5029E1375500155E6A /* FirstViewController_Closure.swift */,
+				C38E7B5229E1376300155E6A /* SecondViewController_Closure.swift */,
+				C38E7B5429E146CE00155E6A /* ClickTimeViewController.swift */,
+				C38E7B5629E146D300155E6A /* ClickViewController.swift */,
+				C38E7B5829E146DB00155E6A /* GridViewController.swift */,
+			);
+			path = Seminar;
+			sourceTree = "<group>";
+		};
 		C38E7B3E29E07A0300155E6A /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,13 +161,7 @@
 		C38E7B4129E07A6400155E6A /* 2nd_Seminar */ = {
 			isa = PBXGroup;
 			children = (
-				C38E7B4C29E133AF00155E6A /* FirstViewController_DelegatePattern.swift */,
-				C38E7B4E29E1343000155E6A /* SecondViewController_DelegatePattern.swift */,
-				C38E7B5029E1375500155E6A /* FirstViewController_Closure.swift */,
-				C38E7B5229E1376300155E6A /* SecondViewController_Closure.swift */,
-				C38E7B5429E146CE00155E6A /* ClickTimeViewController.swift */,
-				C38E7B5629E146D300155E6A /* ClickViewController.swift */,
-				C38E7B5829E146DB00155E6A /* GridViewController.swift */,
+				C31A1F2629F264C500421EAD /* Seminar */,
 				C38E7B6029E394F500155E6A /* TVING */,
 			);
 			path = 2nd_Seminar;
@@ -191,10 +199,8 @@
 		C38E7B6029E394F500155E6A /* TVING */ = {
 			isa = PBXGroup;
 			children = (
-				C38E7B6129E3950800155E6A /* LoginViewController.swift */,
-				C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */,
-				C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */,
-				C3B0BE5D29E52E1400BF613A /* NickNameView.swift */,
+				C3E4F07229F264FE00ECEA26 /* Controller */,
+				C3E4F07129F264FA00ECEA26 /* View */,
 			);
 			path = TVING;
 			sourceTree = "<group>";
@@ -225,6 +231,24 @@
 				C38E7B6D29E398A500155E6A /* Color.swift */,
 			);
 			path = Const;
+			sourceTree = "<group>";
+		};
+		C3E4F07129F264FA00ECEA26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3B0BE5D29E52E1400BF613A /* NickNameView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C3E4F07229F264FE00ECEA26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C38E7B6129E3950800155E6A /* LoginViewController.swift */,
+				C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */,
+				C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
