@@ -27,7 +27,6 @@ final class WelcomeViewController: UIViewController {
     private let mainButton = UIButton().then {
         $0.setTitle("메인으로", for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-//        $0.titleLabel!.textAlignment = .center
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .red1
         $0.layer.cornerRadius = 3
