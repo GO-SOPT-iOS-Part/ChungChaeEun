@@ -38,6 +38,13 @@ class NickNameView: UIView, UITextFieldDelegate {
         $0.isHidden = true
     }
     
+    private let errorLabel = UILabel().then {
+        $0.text = "한글만 입력 가능합니다"
+        $0.font = UIFont(name: "Pretendard-SemiBold", size: 12)
+        $0.textColor = .red1
+        $0.isHidden = true
+    }
+    
     lazy var saveButton = UIButton().then {
         $0.setTitle("저장하기", for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-SemiBold", size: 14)
@@ -68,6 +75,7 @@ class NickNameView: UIView, UITextFieldDelegate {
         self.addSubviews(
             titleLabel,
             nickNameTextField,
+            errorLabel,
             saveButton
         )
         
@@ -86,6 +94,10 @@ class NickNameView: UIView, UITextFieldDelegate {
             $0.centerY.equalToSuperview()
             $0.height.width.equalTo(20)
             $0.trailing.equalToSuperview().offset(-20)
+        }
+        errorLabel.snp.makeConstraints{
+            $0.top.equalTo(nickNameTextField.snp.bottom).offset(15)
+            $0.leading.equalTo(nickNameTextField)
         }
         saveButton.snp.makeConstraints{
             $0.top.equalTo(nickNameTextField.snp.bottom).offset(214)
@@ -141,6 +153,8 @@ extension NickNameView {
         let isBackSpace = strcmp(utf8Char, "\\b")
         if string.isOnlyKorean() || isBackSpace == -92{
             return true
+        } else {
+            errorLabel.isHidden.toggle()
         }
         return false
     }
