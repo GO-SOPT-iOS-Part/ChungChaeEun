@@ -119,17 +119,6 @@ final class CarrotTableViewCell: UITableViewCell {
     
     func configureCell(_ carrot: Carrot) {
         
-        switch carrot.tradeStatus {
-        case .reservation:
-            self.reservationLabel.text = "예약중"
-        case .completed:
-            self.reservationLabel.text = "거래완료"
-        case .shared:
-            self.reservationLabel.text = "나눔완료"
-        case .clear:
-            self.reservationLabel.text = ""
-        }
-        
         carrotImage.image = carrot.image
         productLabel.text = carrot.product
         placeLabel.text = carrot.place

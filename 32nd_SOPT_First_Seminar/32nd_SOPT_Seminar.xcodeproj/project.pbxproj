@@ -135,6 +135,7 @@
 				C38E7B4229E07A7D00155E6A /* 1st_Seminar */,
 				C38E7B4129E07A6400155E6A /* 2nd_Seminar */,
 				C35BA1EE29F3A50D00734CF2 /* 3rd_Seminar */,
+				C38E7B6029E394F500155E6A /* TVING */,
 			);
 			path = 32nd_SOPT_First_Seminar;
 			sourceTree = "<group>";
@@ -156,8 +157,7 @@
 		C35BA1EE29F3A50D00734CF2 /* 3rd_Seminar */ = {
 			isa = PBXGroup;
 			children = (
-				C35BA1EF29F3A88300734CF2 /* CommonView.swift */,
-				C35BA1F129F3A97500734CF2 /* Third_SecondViewController.swift */,
+				C35BA20829F4F2B900734CF2 /* Seminar */,
 				C35BA1F929F3B35F00734CF2 /* Base */,
 				C35BA20229F3BF1A00734CF2 /* Carrot */,
 				C35BA20329F3BF3500734CF2 /* Photo */,
@@ -194,6 +194,15 @@
 			path = Photo;
 			sourceTree = "<group>";
 		};
+		C35BA20829F4F2B900734CF2 /* Seminar */ = {
+			isa = PBXGroup;
+			children = (
+				C35BA1EF29F3A88300734CF2 /* CommonView.swift */,
+				C35BA1F129F3A97500734CF2 /* Third_SecondViewController.swift */,
+			);
+			path = Seminar;
+			sourceTree = "<group>";
+		};
 		C38E7B3E29E07A0300155E6A /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				C31A1F2629F264C500421EAD /* Seminar */,
-				C38E7B6029E394F500155E6A /* TVING */,
 			);
 			path = 2nd_Seminar;
 			sourceTree = "<group>";
