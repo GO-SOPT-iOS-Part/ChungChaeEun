@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         // 2.
         self.window = UIWindow(windowScene: windowScene)
-        let injectViewController = Inject.ViewControllerHost(LoginViewController())
+        let injectViewController = Inject.ViewControllerHost(PhotoViewController())
         // 3.
 //        let navigationController = UINavigationController(rootViewController: FirstViewController_Closure())
         self.window?.rootViewController = injectViewController

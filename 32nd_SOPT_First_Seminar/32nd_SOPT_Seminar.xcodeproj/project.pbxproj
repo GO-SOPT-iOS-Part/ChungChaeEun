@@ -15,6 +15,17 @@
 		C309F87029D7FB06007BAF98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C309F86E29D7FB06007BAF98 /* LaunchScreen.storyboard */; };
 		C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309F87729D806C7007BAF98 /* FirstViewController.swift */; };
 		C309F87C29D80FA5007BAF98 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309F87B29D80FA5007BAF98 /* SecondViewController.swift */; };
+		C35BA1F029F3A88300734CF2 /* CommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA1EF29F3A88300734CF2 /* CommonView.swift */; };
+		C35BA1F229F3A97500734CF2 /* Third_SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA1F129F3A97500734CF2 /* Third_SecondViewController.swift */; };
+		C35BA1F429F3ABC500734CF2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA1F329F3ABC500734CF2 /* BaseViewController.swift */; };
+		C35BA1F629F3B18400734CF2 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA1F529F3B18400734CF2 /* BaseView.swift */; };
+		C35BA1F829F3B35900734CF2 /* CarrotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA1F729F3B35900734CF2 /* CarrotViewController.swift */; };
+		C35BA1FB29F3B59500734CF2 /* Carrot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA1FA29F3B59500734CF2 /* Carrot.swift */; };
+		C35BA1FD29F3B66A00734CF2 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA1FC29F3B66A00734CF2 /* UIImage+.swift */; };
+		C35BA1FF29F3B73A00734CF2 /* CarrotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA1FE29F3B73A00734CF2 /* CarrotTableViewCell.swift */; };
+		C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */; };
+		C35BA20529F3BFA100734CF2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20429F3BFA100734CF2 /* Photo.swift */; };
+		C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20629F3C14B00734CF2 /* PhotoCell.swift */; };
 		C38E7B4529E07B4700155E6A /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4429E07B4700155E6A /* Inject */; };
 		C38E7B4829E07B6100155E6A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4729E07B6100155E6A /* SnapKit */; };
 		C38E7B4B29E07B7200155E6A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4A29E07B7200155E6A /* Then */; };
@@ -50,6 +61,17 @@
 		C309F86F29D7FB06007BAF98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C309F87729D806C7007BAF98 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		C309F87B29D80FA5007BAF98 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		C35BA1EF29F3A88300734CF2 /* CommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonView.swift; sourceTree = "<group>"; };
+		C35BA1F129F3A97500734CF2 /* Third_SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Third_SecondViewController.swift; sourceTree = "<group>"; };
+		C35BA1F329F3ABC500734CF2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C35BA1F529F3B18400734CF2 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		C35BA1F729F3B35900734CF2 /* CarrotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotViewController.swift; sourceTree = "<group>"; };
+		C35BA1FA29F3B59500734CF2 /* Carrot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrot.swift; sourceTree = "<group>"; };
+		C35BA1FC29F3B66A00734CF2 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		C35BA1FE29F3B73A00734CF2 /* CarrotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotTableViewCell.swift; sourceTree = "<group>"; };
+		C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		C35BA20429F3BFA100734CF2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C35BA20629F3C14B00734CF2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		C38E7B4C29E133AF00155E6A /* FirstViewController_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_DelegatePattern.swift; sourceTree = "<group>"; };
 		C38E7B4E29E1343000155E6A /* SecondViewController_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController_DelegatePattern.swift; sourceTree = "<group>"; };
 		C38E7B5029E1375500155E6A /* FirstViewController_Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_Closure.swift; sourceTree = "<group>"; };
@@ -112,6 +134,7 @@
 				C38E7B5F29E3935E00155E6A /* Resource */,
 				C38E7B4229E07A7D00155E6A /* 1st_Seminar */,
 				C38E7B4129E07A6400155E6A /* 2nd_Seminar */,
+				C35BA1EE29F3A50D00734CF2 /* 3rd_Seminar */,
 			);
 			path = 32nd_SOPT_First_Seminar;
 			sourceTree = "<group>";
@@ -128,6 +151,47 @@
 				C38E7B5829E146DB00155E6A /* GridViewController.swift */,
 			);
 			path = Seminar;
+			sourceTree = "<group>";
+		};
+		C35BA1EE29F3A50D00734CF2 /* 3rd_Seminar */ = {
+			isa = PBXGroup;
+			children = (
+				C35BA1EF29F3A88300734CF2 /* CommonView.swift */,
+				C35BA1F129F3A97500734CF2 /* Third_SecondViewController.swift */,
+				C35BA1F929F3B35F00734CF2 /* Base */,
+				C35BA20229F3BF1A00734CF2 /* Carrot */,
+				C35BA20329F3BF3500734CF2 /* Photo */,
+			);
+			path = 3rd_Seminar;
+			sourceTree = "<group>";
+		};
+		C35BA1F929F3B35F00734CF2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C35BA1F329F3ABC500734CF2 /* BaseViewController.swift */,
+				C35BA1F529F3B18400734CF2 /* BaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C35BA20229F3BF1A00734CF2 /* Carrot */ = {
+			isa = PBXGroup;
+			children = (
+				C35BA1F729F3B35900734CF2 /* CarrotViewController.swift */,
+				C35BA1FE29F3B73A00734CF2 /* CarrotTableViewCell.swift */,
+				C35BA1FA29F3B59500734CF2 /* Carrot.swift */,
+			);
+			path = Carrot;
+			sourceTree = "<group>";
+		};
+		C35BA20329F3BF3500734CF2 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */,
+				C35BA20629F3C14B00734CF2 /* PhotoCell.swift */,
+				C35BA20429F3BFA100734CF2 /* Photo.swift */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		C38E7B3E29E07A0300155E6A /* Application */ = {
@@ -181,6 +245,7 @@
 				C38E7B5A29E14C9400155E6A /* UIView+.swift */,
 				C3B0BE5929E528E000BF613A /* UITextField+.swift */,
 				C3B0BE5B29E5290700BF613A /* UIButton+.swift */,
+				C35BA1FC29F3B66A00734CF2 /* UIImage+.swift */,
 				C394531929EE3FAF00FC9005 /* String+.swift */,
 			);
 			path = Extension;
@@ -337,26 +402,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38E7B5529E146CE00155E6A /* ClickTimeViewController.swift in Sources */,
+				C35BA1FD29F3B66A00734CF2 /* UIImage+.swift in Sources */,
+				C35BA1F029F3A88300734CF2 /* CommonView.swift in Sources */,
 				C38E7B5329E1376300155E6A /* SecondViewController_Closure.swift in Sources */,
+				C35BA1F829F3B35900734CF2 /* CarrotViewController.swift in Sources */,
 				C38E7B6229E3950800155E6A /* LoginViewController.swift in Sources */,
 				C309F86829D7FB03007BAF98 /* ViewController.swift in Sources */,
+				C35BA1F429F3ABC500734CF2 /* BaseViewController.swift in Sources */,
 				C38E7B7729E3AAF100155E6A /* WelcomeViewController.swift in Sources */,
 				C38E7B6E29E398A500155E6A /* Color.swift in Sources */,
 				C38E7B4D29E133AF00155E6A /* FirstViewController_DelegatePattern.swift in Sources */,
 				C309F86429D7FB03007BAF98 /* AppDelegate.swift in Sources */,
 				C3B0BE5A29E528E000BF613A /* UITextField+.swift in Sources */,
 				C394531A29EE3FAF00FC9005 /* String+.swift in Sources */,
+				C35BA1F629F3B18400734CF2 /* BaseView.swift in Sources */,
 				C3B0BE5829E5270900BF613A /* NickNameBottomSheetViewController.swift in Sources */,
 				C309F86629D7FB03007BAF98 /* SceneDelegate.swift in Sources */,
+				C35BA20529F3BFA100734CF2 /* Photo.swift in Sources */,
 				C38E7B4F29E1343000155E6A /* SecondViewController_DelegatePattern.swift in Sources */,
+				C35BA1F229F3A97500734CF2 /* Third_SecondViewController.swift in Sources */,
+				C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */,
 				C38E7B5729E146D300155E6A /* ClickViewController.swift in Sources */,
 				C38E7B5929E146DB00155E6A /* GridViewController.swift in Sources */,
 				C38E7B5129E1375500155E6A /* FirstViewController_Closure.swift in Sources */,
 				C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */,
+				C35BA1FB29F3B59500734CF2 /* Carrot.swift in Sources */,
 				C309F87C29D80FA5007BAF98 /* SecondViewController.swift in Sources */,
+				C35BA1FF29F3B73A00734CF2 /* CarrotTableViewCell.swift in Sources */,
 				C3B0BE5E29E52E1400BF613A /* NickNameView.swift in Sources */,
 				C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */,
 				C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */,
+				C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
