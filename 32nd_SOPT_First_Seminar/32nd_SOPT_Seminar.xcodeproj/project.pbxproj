@@ -27,6 +27,8 @@
 		C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */; };
 		C35BA20529F3BFA100734CF2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20429F3BFA100734CF2 /* Photo.swift */; };
 		C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20629F3C14B00734CF2 /* PhotoCell.swift */; };
+		C370E36129F8D38D00606639 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36029F8D38D00606639 /* ProfileViewController.swift */; };
+		C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36229F8ED3F00606639 /* UILabel+.swift */; };
 		C38E7B4529E07B4700155E6A /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4429E07B4700155E6A /* Inject */; };
 		C38E7B4829E07B6100155E6A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4729E07B6100155E6A /* SnapKit */; };
 		C38E7B4B29E07B7200155E6A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4A29E07B7200155E6A /* Then */; };
@@ -74,6 +76,8 @@
 		C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C35BA20429F3BFA100734CF2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C35BA20629F3C14B00734CF2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		C370E36029F8D38D00606639 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C370E36229F8ED3F00606639 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		C38E7B4C29E133AF00155E6A /* FirstViewController_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_DelegatePattern.swift; sourceTree = "<group>"; };
 		C38E7B4E29E1343000155E6A /* SecondViewController_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController_DelegatePattern.swift; sourceTree = "<group>"; };
 		C38E7B5029E1375500155E6A /* FirstViewController_Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_Closure.swift; sourceTree = "<group>"; };
@@ -161,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				C35BA20829F4F2B900734CF2 /* Seminar */,
-				C35BA1F929F3B35F00734CF2 /* Base */,
 				C35BA20229F3BF1A00734CF2 /* Carrot */,
 				C35BA20329F3BF3500734CF2 /* Photo */,
 			);
@@ -258,6 +261,7 @@
 				C3B0BE5B29E5290700BF613A /* UIButton+.swift */,
 				C35BA1FC29F3B66A00734CF2 /* UIImage+.swift */,
 				C394531929EE3FAF00FC9005 /* String+.swift */,
+				C370E36229F8ED3F00606639 /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -324,6 +328,7 @@
 				C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */,
 				C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */,
 				C357D5BE29F8C5DD00DA8E63 /* HomeViewController.swift */,
+				C370E36029F8D38D00606639 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				C38E7B5729E146D300155E6A /* ClickViewController.swift in Sources */,
 				C38E7B5929E146DB00155E6A /* GridViewController.swift in Sources */,
 				C38E7B5129E1375500155E6A /* FirstViewController_Closure.swift in Sources */,
+				C370E36129F8D38D00606639 /* ProfileViewController.swift in Sources */,
 				C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */,
 				C35BA1FB29F3B59500734CF2 /* Carrot.swift in Sources */,
 				C309F87C29D80FA5007BAF98 /* SecondViewController.swift in Sources */,
@@ -444,6 +450,7 @@
 				C3B0BE5E29E52E1400BF613A /* NickNameView.swift in Sources */,
 				C357D5BF29F8C5DD00DA8E63 /* HomeViewController.swift in Sources */,
 				C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */,
+				C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */,
 				C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */,
 				C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */,
 			);

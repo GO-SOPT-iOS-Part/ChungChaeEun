@@ -20,8 +20,11 @@ final class HomeViewController: BaseViewController {
         $0.image = UIImage(named: "gradation")
     }
     
-    private let profileButton = UIButton().then {
+    private lazy var profileButton = UIButton().then {
         $0.setImage(UIImage(named:"profile"), for: .normal)
+        $0.layer.cornerRadius = 15
+        $0.layer.masksToBounds = true
+        $0.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
     }
     
     override func setStyle() {
@@ -45,6 +48,20 @@ final class HomeViewController: BaseViewController {
         profileButton.snp.makeConstraints{
             $0.top.equalToSuperview().offset(55)
             $0.trailing.equalToSuperview().inset(9)
+            $0.width.height.equalTo(33)
         }
+    }
+}
+
+extension HomeViewController {
+    
+    @objc
+    private func profileButtonTapped() {
+        pushToProfileViewController()
+    }
+    
+    private func pushToProfileViewController() {
+        let profileViewController = ProfileViewController()
+        self.navigationController?.pushViewController(profileViewController, animated: true)
     }
 }
