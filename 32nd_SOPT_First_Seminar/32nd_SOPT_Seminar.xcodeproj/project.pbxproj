@@ -161,10 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				C35BA20829F4F2B900734CF2 /* Seminar */,
-<<<<<<< HEAD
-=======
 				C35BA1F929F3B35F00734CF2 /* Base */,
->>>>>>> #5
 				C35BA20229F3BF1A00734CF2 /* Carrot */,
 				C35BA20329F3BF3500734CF2 /* Photo */,
 			);
