@@ -29,6 +29,8 @@
 		C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20629F3C14B00734CF2 /* PhotoCell.swift */; };
 		C370E36129F8D38D00606639 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36029F8D38D00606639 /* ProfileViewController.swift */; };
 		C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36229F8ED3F00606639 /* UILabel+.swift */; };
+		C370E36529F8F35000606639 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36429F8F35000606639 /* MyPageTableViewCell.swift */; };
+		C370E36829F8F48400606639 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36729F8F48400606639 /* MyPage.swift */; };
 		C38E7B4529E07B4700155E6A /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4429E07B4700155E6A /* Inject */; };
 		C38E7B4829E07B6100155E6A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4729E07B6100155E6A /* SnapKit */; };
 		C38E7B4B29E07B7200155E6A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4A29E07B7200155E6A /* Then */; };
@@ -78,6 +80,8 @@
 		C35BA20629F3C14B00734CF2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		C370E36029F8D38D00606639 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C370E36229F8ED3F00606639 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		C370E36429F8F35000606639 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
+		C370E36729F8F48400606639 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		C38E7B4C29E133AF00155E6A /* FirstViewController_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_DelegatePattern.swift; sourceTree = "<group>"; };
 		C38E7B4E29E1343000155E6A /* SecondViewController_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController_DelegatePattern.swift; sourceTree = "<group>"; };
 		C38E7B5029E1375500155E6A /* FirstViewController_Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_Closure.swift; sourceTree = "<group>"; };
@@ -209,6 +213,22 @@
 			path = Seminar;
 			sourceTree = "<group>";
 		};
+		C370E36629F8F35300606639 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C370E36429F8F35000606639 /* MyPageTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C370E36929F8F48800606639 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C370E36729F8F48400606639 /* MyPage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		C38E7B3E29E07A0300155E6A /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +301,8 @@
 			children = (
 				C3E4F07229F264FE00ECEA26 /* Controller */,
 				C3E4F07129F264FA00ECEA26 /* View */,
+				C370E36929F8F48800606639 /* Model */,
+				C370E36629F8F35300606639 /* Cell */,
 			);
 			path = TVING;
 			sourceTree = "<group>";
@@ -434,6 +456,7 @@
 				C394531A29EE3FAF00FC9005 /* String+.swift in Sources */,
 				C35BA1F629F3B18400734CF2 /* BaseView.swift in Sources */,
 				C3B0BE5829E5270900BF613A /* NickNameBottomSheetViewController.swift in Sources */,
+				C370E36829F8F48400606639 /* MyPage.swift in Sources */,
 				C309F86629D7FB03007BAF98 /* SceneDelegate.swift in Sources */,
 				C35BA20529F3BFA100734CF2 /* Photo.swift in Sources */,
 				C38E7B4F29E1343000155E6A /* SecondViewController_DelegatePattern.swift in Sources */,
@@ -452,6 +475,7 @@
 				C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */,
 				C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */,
 				C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */,
+				C370E36529F8F35000606639 /* MyPageTableViewCell.swift in Sources */,
 				C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

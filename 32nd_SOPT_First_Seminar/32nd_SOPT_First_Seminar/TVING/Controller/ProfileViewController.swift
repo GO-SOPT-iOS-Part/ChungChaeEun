@@ -12,6 +12,11 @@ import Then
 
 final class ProfileViewController: BaseViewController {
     
+//    private lazy var scrollView = UIScrollView().then {
+//        $0.translatesAutoresizingMaskIntoConstraints = false
+//        $0.isScrollEnabled = true
+//    }
+    
     private lazy var backButton = UIButton().then {
         $0.setImage(UIImage(named:"icn_btn_before"), for: .normal)
     }
@@ -107,14 +112,25 @@ final class ProfileViewController: BaseViewController {
     
     private let nextButton = UIButton().then {
         $0.setImage(UIImage(systemName:"chevron.right" )?.withTintColor(.gray2, renderingMode: .alwaysOriginal), for: .normal)
-        
     }
+    
+    private lazy var tableView = UITableView().then {
+        $0.register(MyPageTableViewCell.self, forCellReuseIdentifier: MyPageTableViewCell.identifier)
+        $0.rowHeight = 54
+        $0.delegate = self
+        $0.dataSource = self
+        $0.isScrollEnabled = false
+    }
+    
+    private let dummy = MyPage.dummy()
     
     override func setStyle() {
         view.backgroundColor = .black
     }
     
     override func setLayout() {
+//        view.addSubview(scrollView)
+        
         view.addSubviews(
             backButton,
             notificationButton,
@@ -123,7 +139,8 @@ final class ProfileViewController: BaseViewController {
             nameLabel,
             changeButton,
             ticketView,
-            tvProgramView
+            tvProgramView,
+            tableView
         )
         
         ticketView.addSubviews(
@@ -137,6 +154,10 @@ final class ProfileViewController: BaseViewController {
             tvProgramLabel,
             nextButton
         )
+        
+//        scrollView.snp.makeConstraints {
+//            $0.edges.equalToSuperview()
+//        }
         
         backButton.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(24)
@@ -210,5 +231,27 @@ final class ProfileViewController: BaseViewController {
             $0.centerY.equalTo(tvProgramView)
             $0.trailing.equalToSuperview().inset(13)
         }
+        
+        tableView.snp.makeConstraints{
+            $0.top.equalTo(tvProgramView.snp.bottom).offset(24)
+            $0.bottom.leading.trailing.equalToSuperview()
+        }
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate {}
+extension ProfileViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dummy.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MyPageTableViewCell.identifier, for: indexPath) as? MyPageTableViewCell else { return UITableViewCell() }
+        
+        cell.configureCell(dummy[indexPath.row])
+        
+        return cell
     }
 }
