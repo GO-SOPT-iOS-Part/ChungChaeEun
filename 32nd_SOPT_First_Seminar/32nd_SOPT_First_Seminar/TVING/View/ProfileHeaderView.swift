@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-final class ProfileHeaderView: BaseView {
+final class ProfileHeaderView: UITableViewHeaderFooterView {
     
     lazy var backButton = UIButton().then {
         $0.setImage(UIImage(named:"icn_btn_before"), for: .normal)
@@ -109,7 +109,22 @@ final class ProfileHeaderView: BaseView {
         $0.setImage(UIImage(systemName:"chevron.right" )?.withTintColor(.gray2, renderingMode: .alwaysOriginal), for: .normal)
     }
     
-    override func setLayout() {
+    override init(reuseIdentifier: String?) {
+        super.init(reuseIdentifier: reuseIdentifier)
+        
+        setStyle()
+        setLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setStyle() {
+        self.backgroundColor = .black
+    }
+    
+    private func setLayout() {
         self.addSubviews(
             backButton,
             notificationButton,

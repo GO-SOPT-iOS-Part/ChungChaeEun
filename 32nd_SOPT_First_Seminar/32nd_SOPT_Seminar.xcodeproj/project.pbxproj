@@ -28,6 +28,9 @@
 		C35BA20529F3BFA100734CF2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20429F3BFA100734CF2 /* Photo.swift */; };
 		C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20629F3C14B00734CF2 /* PhotoCell.swift */; };
 		C36A3A552A00D497004D7BC3 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */; };
+		C36A3A572A00ED82004D7BC3 /* SettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A3A562A00ED82004D7BC3 /* SettingFooterView.swift */; };
+		C36A3A592A00ED9A004D7BC3 /* LogoutFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A3A582A00ED9A004D7BC3 /* LogoutFooterView.swift */; };
+		C36A3A5B2A00EF13004D7BC3 /* UITableHeaderFooterView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A3A5A2A00EF13004D7BC3 /* UITableHeaderFooterView+.swift */; };
 		C370E36129F8D38D00606639 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36029F8D38D00606639 /* ProfileViewController.swift */; };
 		C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36229F8ED3F00606639 /* UILabel+.swift */; };
 		C370E36529F8F35000606639 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36429F8F35000606639 /* MyPageTableViewCell.swift */; };
@@ -80,6 +83,9 @@
 		C35BA20429F3BFA100734CF2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C35BA20629F3C14B00734CF2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		C36A3A562A00ED82004D7BC3 /* SettingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFooterView.swift; sourceTree = "<group>"; };
+		C36A3A582A00ED9A004D7BC3 /* LogoutFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutFooterView.swift; sourceTree = "<group>"; };
+		C36A3A5A2A00EF13004D7BC3 /* UITableHeaderFooterView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableHeaderFooterView+.swift"; sourceTree = "<group>"; };
 		C370E36029F8D38D00606639 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C370E36229F8ED3F00606639 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		C370E36429F8F35000606639 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 				C3B0BE5929E528E000BF613A /* UITextField+.swift */,
 				C3B0BE5B29E5290700BF613A /* UIButton+.swift */,
 				C35BA1FC29F3B66A00734CF2 /* UIImage+.swift */,
+				C36A3A5A2A00EF13004D7BC3 /* UITableHeaderFooterView+.swift */,
 				C394531929EE3FAF00FC9005 /* String+.swift */,
 				C370E36229F8ED3F00606639 /* UILabel+.swift */,
 			);
@@ -342,6 +349,8 @@
 			children = (
 				C3B0BE5D29E52E1400BF613A /* NickNameView.swift */,
 				C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */,
+				C36A3A562A00ED82004D7BC3 /* SettingFooterView.swift */,
+				C36A3A582A00ED9A004D7BC3 /* LogoutFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,9 +454,11 @@
 			files = (
 				C38E7B5529E146CE00155E6A /* ClickTimeViewController.swift in Sources */,
 				C35BA1FD29F3B66A00734CF2 /* UIImage+.swift in Sources */,
+				C36A3A5B2A00EF13004D7BC3 /* UITableHeaderFooterView+.swift in Sources */,
 				C35BA1F029F3A88300734CF2 /* CommonView.swift in Sources */,
 				C38E7B5329E1376300155E6A /* SecondViewController_Closure.swift in Sources */,
 				C35BA1F829F3B35900734CF2 /* CarrotViewController.swift in Sources */,
+				C36A3A592A00ED9A004D7BC3 /* LogoutFooterView.swift in Sources */,
 				C38E7B6229E3950800155E6A /* LoginViewController.swift in Sources */,
 				C309F86829D7FB03007BAF98 /* ViewController.swift in Sources */,
 				C35BA1F429F3ABC500734CF2 /* BaseViewController.swift in Sources */,
@@ -478,6 +489,7 @@
 				C357D5BF29F8C5DD00DA8E63 /* HomeViewController.swift in Sources */,
 				C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */,
 				C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */,
+				C36A3A572A00ED82004D7BC3 /* SettingFooterView.swift in Sources */,
 				C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */,
 				C370E36529F8F35000606639 /* MyPageTableViewCell.swift in Sources */,
 				C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */,

@@ -14,19 +14,28 @@ final class ProfileViewController: BaseViewController {
     
     private let headerView = ProfileHeaderView()
     
-    private lazy var tableView = UITableView().then {
+    private lazy var tableView = UITableView(frame: .zero, style: .grouped).then {
         $0.register(MyPageTableViewCell.self, forCellReuseIdentifier: MyPageTableViewCell.identifier)
+        $0.register(ProfileHeaderView.self, forHeaderFooterViewReuseIdentifier: "ProfileHeaderView")
+        $0.register(SettingFooterView.self, forHeaderFooterViewReuseIdentifier: "SettingFooterView")
+        $0.register(LogoutFooterView.self, forHeaderFooterViewReuseIdentifier: "LogoutFooterView")
         $0.rowHeight = 54
         $0.delegate = self
         $0.dataSource = self
+        $0.backgroundColor = .black
     }
     
     private let dummy1 = MyPage.dummy1()
     private let dummy2 = MyPage.dummy2()
     
     override func attribute() {
-        headerView.backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
-        //        tableView.tableHeaderView = headerView
+        ProfileHeaderView().backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        tableView.register(ProfileHeaderView.self,
+                           forHeaderFooterViewReuseIdentifier: ProfileHeaderView.cellIdentifier)
+        tableView.register(SettingFooterView.self,
+                           forHeaderFooterViewReuseIdentifier: SettingFooterView.cellIdentifier)
+        tableView.register(LogoutFooterView.self,
+                           forHeaderFooterViewReuseIdentifier: LogoutFooterView.cellIdentifier)
     }
     
     override func setStyle() {
@@ -34,38 +43,52 @@ final class ProfileViewController: BaseViewController {
     }
     
     override func setLayout() {
-        
-        view.addSubview(
-            tableView)
-        
-        //        tableView.addSubviews(headerView)
-        
-        //        scrollView.addSubview(contentsView)
-        
+        view.addSubview(tableView)
         tableView.snp.makeConstraints{
-            //            $0.top.equalTo(headerView.snp.bottom).offset(24)
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        
-        //        headerView.snp.makeConstraints {
-        //            $0.top.leading.trailing.equalToSuperview()
-        //            $0.width.equalToSuperview()
-        //        }
     }
 }
 
 extension ProfileViewController {
-    @objc private func backButtonTapped() {
+    @objc func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
 }
 
-extension ProfileViewController: UITableViewDelegate {}
-extension ProfileViewController: UITableViewDataSource {
+extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
-    //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        return 317
-    //    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0 :
+            guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileHeaderView.cellIdentifier) as? ProfileHeaderView else { return UIView() }
+            return view
+        default :
+            return UIView()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 414 : 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        switch section {
+        case 0 :
+            guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: SettingFooterView.cellIdentifier) as? SettingFooterView else { return UIView() }
+            return view
+        case 1 :
+            guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: LogoutFooterView.cellIdentifier) as? LogoutFooterView else { return UIView() }
+            return view
+        default :
+            return UIView()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return section == 0 ? 32 : 90
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -80,18 +103,17 @@ extension ProfileViewController: UITableViewDataSource {
             return 0
         }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MyPageTableViewCell.identifier, for: indexPath) as? MyPageTableViewCell else { return UITableViewCell() }
         
         if indexPath.section == 0 {
-                    cell.configureCell(dummy1[indexPath.row])
-                } else if indexPath.section == 1 {
-                    cell.configureCell(dummy2[indexPath.row])
-                } else {
-                    return UITableViewCell()
-                }
+            cell.configureCell(dummy1[indexPath.row])
+        } else if indexPath.section == 1 {
+            cell.configureCell(dummy2[indexPath.row])
+        } else {
+            return UITableViewCell()
+        }
         return cell
     }
 }
