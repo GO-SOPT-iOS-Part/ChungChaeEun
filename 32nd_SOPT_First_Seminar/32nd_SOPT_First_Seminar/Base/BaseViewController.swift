@@ -36,7 +36,7 @@ class BaseViewController: UIViewController {
 
         setStyle()
         setLayout()
-        setAddTarget()
+        attribute()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,12 +50,12 @@ class BaseViewController: UIViewController {
     /// Attributes (속성) 설정 메서드
     func setStyle() {
         
-        view.backgroundColor = .white
+        view.backgroundColor = .black
     }
     
     /// Hierarchy, Constraints (계층 및 제약조건) 설정 메서드
     func setLayout() {}
     
-    func setAddTarget() {}
+    func attribute() {}
    
 }

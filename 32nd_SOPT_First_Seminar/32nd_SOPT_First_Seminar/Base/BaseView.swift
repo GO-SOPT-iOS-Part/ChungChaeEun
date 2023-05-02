@@ -21,6 +21,8 @@ class BaseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setStyle() {}
+    func setStyle() {
+        self.backgroundColor = .black
+    }
     func setLayout() {}
 }
