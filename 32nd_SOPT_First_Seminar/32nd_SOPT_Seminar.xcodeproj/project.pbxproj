@@ -27,6 +27,7 @@
 		C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */; };
 		C35BA20529F3BFA100734CF2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20429F3BFA100734CF2 /* Photo.swift */; };
 		C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20629F3C14B00734CF2 /* PhotoCell.swift */; };
+		C36A3A552A00D497004D7BC3 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */; };
 		C370E36129F8D38D00606639 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36029F8D38D00606639 /* ProfileViewController.swift */; };
 		C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36229F8ED3F00606639 /* UILabel+.swift */; };
 		C370E36529F8F35000606639 /* MyPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370E36429F8F35000606639 /* MyPageTableViewCell.swift */; };
@@ -78,6 +79,7 @@
 		C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C35BA20429F3BFA100734CF2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C35BA20629F3C14B00734CF2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		C370E36029F8D38D00606639 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C370E36229F8ED3F00606639 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		C370E36429F8F35000606639 /* MyPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTableViewCell.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				C3B0BE5D29E52E1400BF613A /* NickNameView.swift */,
+				C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */,
 				C35BA1FB29F3B59500734CF2 /* Carrot.swift in Sources */,
 				C309F87C29D80FA5007BAF98 /* SecondViewController.swift in Sources */,
+				C36A3A552A00D497004D7BC3 /* ProfileHeaderView.swift in Sources */,
 				C35BA1FF29F3B73A00734CF2 /* CarrotTableViewCell.swift in Sources */,
 				C3B0BE5E29E52E1400BF613A /* NickNameView.swift in Sources */,
 				C357D5BF29F8C5DD00DA8E63 /* HomeViewController.swift in Sources */,

@@ -36,6 +36,7 @@ class BaseViewController: UIViewController {
 
         setStyle()
         setLayout()
+        setAddTarget()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,5 +55,7 @@ class BaseViewController: UIViewController {
     
     /// Hierarchy, Constraints (계층 및 제약조건) 설정 메서드
     func setLayout() {}
+    
+    func setAddTarget() {}
    
 }
