@@ -12,10 +12,12 @@ import Then
 
 final class ProfileViewController: BaseViewController {
     
-//    private lazy var scrollView = UIScrollView().then {
-//        $0.translatesAutoresizingMaskIntoConstraints = false
-//        $0.isScrollEnabled = true
-//    }
+    private lazy var scrollView = UIScrollView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isScrollEnabled = true
+    }
+    
+    private let contentsView = UIView()
     
     private lazy var backButton = UIButton().then {
         $0.setImage(UIImage(named:"icn_btn_before"), for: .normal)
@@ -36,7 +38,7 @@ final class ProfileViewController: BaseViewController {
     }
     
     private let nameLabel = UILabel().then {
-        $0.text = "chanetopia"
+        $0.text = "chaentopia"
         $0.font = UIFont(name: "Pretendard-Bold", size: 17)
         $0.textColor = .white
     }
@@ -129,9 +131,11 @@ final class ProfileViewController: BaseViewController {
     }
     
     override func setLayout() {
-//        view.addSubview(scrollView)
+        view.addSubview(scrollView)
         
-        view.addSubviews(
+        scrollView.addSubview(contentsView)
+        
+        contentsView.addSubviews(
             backButton,
             notificationButton,
             settingButton,
@@ -155,9 +159,16 @@ final class ProfileViewController: BaseViewController {
             nextButton
         )
         
-//        scrollView.snp.makeConstraints {
-//            $0.edges.equalToSuperview()
-//        }
+        scrollView.snp.makeConstraints {
+            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
+        
+        contentsView.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            $0.bottom.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.width.equalToSuperview()
+        }
         
         backButton.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(24)
@@ -234,7 +245,7 @@ final class ProfileViewController: BaseViewController {
         
         tableView.snp.makeConstraints{
             $0.top.equalTo(tvProgramView.snp.bottom).offset(24)
-            $0.bottom.leading.trailing.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
 }

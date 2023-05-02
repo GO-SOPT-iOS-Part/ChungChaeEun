@@ -10,7 +10,9 @@ import UIKit
 import SnapKit
 import Then
 
-class NickNameView: UIView, UITextFieldDelegate {
+typealias ViewTextFieldDelegate = UIView & UITextFieldDelegate
+
+class NickNameView: ViewTextFieldDelegate {
     
     private let titleLabel = UILabel().then {
         $0.text = "닉네임을 입력해주세요"

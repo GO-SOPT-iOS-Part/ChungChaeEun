@@ -63,5 +63,7 @@ extension HomeViewController {
     private func pushToProfileViewController() {
         let profileViewController = ProfileViewController()
         self.navigationController?.pushViewController(profileViewController, animated: true)
+//        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+//        sceneDelegate.window?.rootViewController = profileViewController
     }
 }

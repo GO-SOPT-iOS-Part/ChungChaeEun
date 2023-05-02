@@ -24,12 +24,13 @@ final class WelcomeViewController: UIViewController {
         $0.textColor = .gray1
     }
     
-    private let mainButton = UIButton().then {
+    private lazy var mainButton = UIButton().then {
         $0.setTitle("메인으로", for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .red1
         $0.layer.cornerRadius = 3
+        $0.addTarget(self, action: #selector(mainButtonTapped), for: .touchUpInside)
     }
     var name: String?
     
@@ -75,5 +76,13 @@ extension WelcomeViewController {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
+    }
+    
+    @objc
+    private func mainButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
+        let homeViewController = HomeViewController()
+        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+        sceneDelegate.window?.rootViewController = homeViewController
     }
 }
