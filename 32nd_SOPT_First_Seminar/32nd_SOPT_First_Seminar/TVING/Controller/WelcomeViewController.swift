@@ -83,6 +83,6 @@ extension WelcomeViewController {
         self.dismiss(animated: true, completion: nil)
         let homeViewController = HomeViewController()
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
-        sceneDelegate.window?.rootViewController = homeViewController
+        sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: homeViewController)
     }
 }
