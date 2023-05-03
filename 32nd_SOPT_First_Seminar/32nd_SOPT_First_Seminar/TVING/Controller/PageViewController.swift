@@ -68,9 +68,8 @@ extension PageViewController {
     }
     
     private func setLayout() {
-        
-        view.addSubview(pageViewController.view)
         addChild(pageViewController)
+        view.addSubview(pageViewController.view)
         view.addSubview(homeView)
         
         homeView.snp.makeConstraints{
@@ -80,17 +79,16 @@ extension PageViewController {
         
         pageViewController.view.snp.makeConstraints {
             $0.edges.equalToSuperview()
-//            $0.height.equalTo(498)
         }
         pageViewController.didMove(toParent: self)
         
         homeView.addSubviews(topGradationImage, titleImage, profileButton)
         
-        topGradationImage.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.width.equalToSuperview()
-            $0.height.equalTo(94)
-        }
+//        topGradationImage.snp.makeConstraints {
+//            $0.top.equalToSuperview()
+//            $0.width.equalToSuperview()
+//            $0.height.equalTo(94)
+//        }
         
         titleImage.snp.makeConstraints {
             $0.top.equalToSuperview().offset(59)

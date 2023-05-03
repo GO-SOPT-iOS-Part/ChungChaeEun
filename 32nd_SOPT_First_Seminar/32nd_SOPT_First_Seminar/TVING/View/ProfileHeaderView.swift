@@ -150,7 +150,7 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
         
         beforeButton.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(24)
-            $0.top.equalToSuperview().offset(30)
+            $0.top.equalToSuperview().offset(10)
         }
         
         notificationButton.snp.makeConstraints{

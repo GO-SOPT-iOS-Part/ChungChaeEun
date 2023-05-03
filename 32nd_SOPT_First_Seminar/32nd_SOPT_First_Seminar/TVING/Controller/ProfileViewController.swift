@@ -29,7 +29,8 @@ final class ProfileViewController: BaseViewController {
     private let dummy2 = MyPage.dummy2()
     
     override func attribute() {
-        ProfileHeaderView().beforeButton.addTarget(self, action: #selector(beforeButtonTapped), for: .touchUpInside)
+        let profileHeaderView = ProfileHeaderView()
+        profileHeaderView.beforeButton.addTarget(self, action: #selector(beforeButtonTapped), for: .touchUpInside)
         tableView.register(ProfileHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: ProfileHeaderView.cellIdentifier)
         tableView.register(SettingFooterView.self,
@@ -69,7 +70,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 371 : 0
+        return section == 0 ? 351 : 0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
