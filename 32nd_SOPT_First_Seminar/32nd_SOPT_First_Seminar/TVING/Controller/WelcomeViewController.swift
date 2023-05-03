@@ -81,8 +81,8 @@ extension WelcomeViewController {
     @objc
     private func mainButtonTapped() {
         self.dismiss(animated: true, completion: nil)
-        let homeViewController = HomeViewController()
+        let pageViewController = PageViewController()
         let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
-        sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: homeViewController)
+        sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: pageViewController)
     }
 }

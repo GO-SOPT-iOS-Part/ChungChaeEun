@@ -58,6 +58,11 @@
 		C3B0BE5A29E528E000BF613A /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5929E528E000BF613A /* UITextField+.swift */; };
 		C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5B29E5290700BF613A /* UIButton+.swift */; };
 		C3B0BE5E29E52E1400BF613A /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B0BE5D29E52E1400BF613A /* NickNameView.swift */; };
+		C3EE1C722A024E9A009AB36B /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C712A024E99009AB36B /* LiveViewController.swift */; };
+		C3EE1C742A024EA2009AB36B /* TVProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */; };
+		C3EE1C762A024EBA009AB36B /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C752A024EBA009AB36B /* MovieViewController.swift */; };
+		C3EE1C782A024ECA009AB36B /* ParamountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C772A024ECA009AB36B /* ParamountViewController.swift */; };
+		C3EE1C7A2A025500009AB36B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C792A025500009AB36B /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +116,11 @@
 		C3B0BE5929E528E000BF613A /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		C3B0BE5B29E5290700BF613A /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		C3B0BE5D29E52E1400BF613A /* NickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
+		C3EE1C712A024E99009AB36B /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVProgramViewController.swift; sourceTree = "<group>"; };
+		C3EE1C752A024EBA009AB36B /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		C3EE1C772A024ECA009AB36B /* ParamountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamountViewController.swift; sourceTree = "<group>"; };
+		C3EE1C792A025500009AB36B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,7 +371,12 @@
 				C38E7B6129E3950800155E6A /* LoginViewController.swift */,
 				C38E7B7629E3AAF100155E6A /* WelcomeViewController.swift */,
 				C3B0BE5729E5270900BF613A /* NickNameBottomSheetViewController.swift */,
+				C3EE1C792A025500009AB36B /* PageViewController.swift */,
 				C357D5BE29F8C5DD00DA8E63 /* HomeViewController.swift */,
+				C3EE1C712A024E99009AB36B /* LiveViewController.swift */,
+				C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */,
+				C3EE1C752A024EBA009AB36B /* MovieViewController.swift */,
+				C3EE1C772A024ECA009AB36B /* ParamountViewController.swift */,
 				C370E36029F8D38D00606639 /* ProfileViewController.swift */,
 			);
 			path = Controller;
@@ -453,6 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C38E7B5529E146CE00155E6A /* ClickTimeViewController.swift in Sources */,
+				C3EE1C782A024ECA009AB36B /* ParamountViewController.swift in Sources */,
 				C35BA1FD29F3B66A00734CF2 /* UIImage+.swift in Sources */,
 				C36A3A5B2A00EF13004D7BC3 /* UITableHeaderFooterView+.swift in Sources */,
 				C35BA1F029F3A88300734CF2 /* CommonView.swift in Sources */,
@@ -468,6 +484,8 @@
 				C309F86429D7FB03007BAF98 /* AppDelegate.swift in Sources */,
 				C3B0BE5A29E528E000BF613A /* UITextField+.swift in Sources */,
 				C394531A29EE3FAF00FC9005 /* String+.swift in Sources */,
+				C3EE1C742A024EA2009AB36B /* TVProgramViewController.swift in Sources */,
+				C3EE1C722A024E9A009AB36B /* LiveViewController.swift in Sources */,
 				C35BA1F629F3B18400734CF2 /* BaseView.swift in Sources */,
 				C3B0BE5829E5270900BF613A /* NickNameBottomSheetViewController.swift in Sources */,
 				C370E36829F8F48400606639 /* MyPage.swift in Sources */,
@@ -478,6 +496,7 @@
 				C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */,
 				C38E7B5729E146D300155E6A /* ClickViewController.swift in Sources */,
 				C38E7B5929E146DB00155E6A /* GridViewController.swift in Sources */,
+				C3EE1C7A2A025500009AB36B /* PageViewController.swift in Sources */,
 				C38E7B5129E1375500155E6A /* FirstViewController_Closure.swift in Sources */,
 				C370E36129F8D38D00606639 /* ProfileViewController.swift in Sources */,
 				C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */,
@@ -485,6 +504,7 @@
 				C309F87C29D80FA5007BAF98 /* SecondViewController.swift in Sources */,
 				C36A3A552A00D497004D7BC3 /* ProfileHeaderView.swift in Sources */,
 				C35BA1FF29F3B73A00734CF2 /* CarrotTableViewCell.swift in Sources */,
+				C3EE1C762A024EBA009AB36B /* MovieViewController.swift in Sources */,
 				C3B0BE5E29E52E1400BF613A /* NickNameView.swift in Sources */,
 				C357D5BF29F8C5DD00DA8E63 /* HomeViewController.swift in Sources */,
 				C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */,
