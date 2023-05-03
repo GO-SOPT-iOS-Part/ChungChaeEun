@@ -29,7 +29,7 @@ final class ProfileViewController: BaseViewController {
     private let dummy2 = MyPage.dummy2()
     
     override func attribute() {
-        ProfileHeaderView().backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        ProfileHeaderView().beforeButton.addTarget(self, action: #selector(beforeButtonTapped), for: .touchUpInside)
         tableView.register(ProfileHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: ProfileHeaderView.cellIdentifier)
         tableView.register(SettingFooterView.self,
@@ -51,7 +51,7 @@ final class ProfileViewController: BaseViewController {
 }
 
 extension ProfileViewController {
-    @objc func backButtonTapped() {
+    @objc private func beforeButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
 }
@@ -69,7 +69,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 414 : 0
+        return section == 0 ? 371 : 0
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

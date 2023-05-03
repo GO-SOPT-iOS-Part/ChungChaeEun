@@ -12,7 +12,7 @@ import Then
 
 final class ProfileHeaderView: UITableViewHeaderFooterView {
     
-    lazy var backButton = UIButton().then {
+    lazy var beforeButton = UIButton().then {
         $0.setImage(UIImage(named:"icn_btn_before"), for: .normal)
     }
     
@@ -126,7 +126,7 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
     
     private func setLayout() {
         self.addSubviews(
-            backButton,
+            beforeButton,
             notificationButton,
             settingButton,
             profileImage,
@@ -148,13 +148,13 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
             nextButton
         )
         
-        backButton.snp.makeConstraints{
+        beforeButton.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(24)
-            $0.top.equalToSuperview().offset(73)
+            $0.top.equalToSuperview().offset(30)
         }
         
         notificationButton.snp.makeConstraints{
-            $0.top.equalTo(backButton)
+            $0.top.equalTo(beforeButton)
             $0.trailing.equalToSuperview().inset(67)
         }
         
@@ -164,7 +164,7 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
         }
         
         profileImage.snp.makeConstraints{
-            $0.top.equalTo(backButton.snp.bottom).offset(35)
+            $0.top.equalTo(beforeButton.snp.bottom).offset(35)
             $0.leading.equalToSuperview().offset(24)
             $0.width.height.equalTo(74)
         }

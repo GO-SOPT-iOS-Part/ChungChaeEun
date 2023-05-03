@@ -26,7 +26,7 @@ final class CommonView: UIView {
             $0.layer.borderWidth = 1
         }
         
-          let backButton = UIButton().then {
+          private lazy var backButton = UIButton().then {
             $0.setTitle("뒤로가기!", for: .normal)
             $0.backgroundColor = .red
             $0.setTitleColor(.blue, for: .normal)
