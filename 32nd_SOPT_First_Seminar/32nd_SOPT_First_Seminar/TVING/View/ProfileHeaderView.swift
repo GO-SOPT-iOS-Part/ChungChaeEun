@@ -136,6 +136,8 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
             tvProgramView
         )
         
+//        self.contentView.addSubview(beforeButton)
+        
         ticketView.addSubviews(
             myTicketLabel,
             myCashLabel,

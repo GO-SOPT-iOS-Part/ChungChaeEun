@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol beforeButtonDelegate: class {
+    func beforeButtonTapped()
+}
+
 final class ProfileViewController: BaseViewController {
     
     private let headerView = ProfileHeaderView()
@@ -30,7 +34,8 @@ final class ProfileViewController: BaseViewController {
     
     override func attribute() {
         let profileHeaderView = ProfileHeaderView()
-        profileHeaderView.beforeButton.addTarget(self, action: #selector(beforeButtonTapped), for: .touchUpInside)
+        profileHeaderView.beforeButton.addTarget(self, action: #selector(profileBeforeButtonTapped), for: .touchUpInside)
+        profileHeaderView.beforeButton.tag = 0
         tableView.register(ProfileHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: ProfileHeaderView.cellIdentifier)
         tableView.register(SettingFooterView.self,
@@ -51,9 +56,14 @@ final class ProfileViewController: BaseViewController {
     }
 }
 
-extension ProfileViewController {
-    @objc private func beforeButtonTapped() {
+extension ProfileViewController: beforeButtonDelegate {
+    
+    @objc func beforeButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+   @objc func profileBeforeButtonTapped(_ sender: UIButton) {
+        MyPageTableViewCell().delegate?.beforeButtonTapped()
     }
 }
 
@@ -107,6 +117,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MyPageTableViewCell.identifier, for: indexPath) as? MyPageTableViewCell else { return UITableViewCell() }
+        
+        cell.delegate = self
         
         if indexPath.section == 0 {
             cell.configureCell(dummy1[indexPath.row])
