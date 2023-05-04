@@ -20,8 +20,6 @@ final class MyPageTableViewCell: UITableViewCell {
     
     private lazy var nextImage = UIImageView()
     
-    weak var delegate: beforeButtonDelegate?
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

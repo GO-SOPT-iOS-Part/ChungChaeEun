@@ -10,10 +10,17 @@ import UIKit
 import SnapKit
 import Then
 
+protocol beforeButtonDelegate: AnyObject {
+    func beforeButtonTapped()
+}
+
 final class ProfileHeaderView: UITableViewHeaderFooterView {
+    
+    weak var cellDelegate: beforeButtonDelegate?
     
     lazy var beforeButton = UIButton().then {
         $0.setImage(UIImage(named:"icn_btn_before"), for: .normal)
+        
     }
     
     private lazy var notificationButton = UIButton().then {
@@ -122,6 +129,12 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
     
     private func setStyle() {
         self.backgroundColor = .black
+        self.beforeButton.addTarget(self, action: #selector(beforeButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc
+    func beforeButtonTapped() {
+        cellDelegate?.beforeButtonTapped()
     }
     
     private func setLayout() {
@@ -135,8 +148,6 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
             ticketView,
             tvProgramView
         )
-        
-//        self.contentView.addSubview(beforeButton)
         
         ticketView.addSubviews(
             myTicketLabel,
@@ -224,3 +235,4 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
         }
     }
 }
+

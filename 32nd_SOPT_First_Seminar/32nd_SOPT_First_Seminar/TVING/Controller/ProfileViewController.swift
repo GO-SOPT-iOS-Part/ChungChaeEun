@@ -10,10 +10,6 @@ import UIKit
 import SnapKit
 import Then
 
-protocol beforeButtonDelegate: class {
-    func beforeButtonTapped()
-}
-
 final class ProfileViewController: BaseViewController {
     
     private let headerView = ProfileHeaderView()
@@ -33,9 +29,6 @@ final class ProfileViewController: BaseViewController {
     private let dummy2 = MyPage.dummy2()
     
     override func attribute() {
-        let profileHeaderView = ProfileHeaderView()
-        profileHeaderView.beforeButton.addTarget(self, action: #selector(profileBeforeButtonTapped), for: .touchUpInside)
-        profileHeaderView.beforeButton.tag = 0
         tableView.register(ProfileHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: ProfileHeaderView.cellIdentifier)
         tableView.register(SettingFooterView.self,
@@ -56,14 +49,16 @@ final class ProfileViewController: BaseViewController {
     }
 }
 
+
 extension ProfileViewController: beforeButtonDelegate {
-    
-    @objc func beforeButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
+    func beforeButtonTapped() {
+        profileBeforeButtonTapped()
     }
-    
-   @objc func profileBeforeButtonTapped(_ sender: UIButton) {
-        MyPageTableViewCell().delegate?.beforeButtonTapped()
+}
+
+extension ProfileViewController {
+    func profileBeforeButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -72,7 +67,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0 :
-            guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileHeaderView.cellIdentifier) as? ProfileHeaderView else { return UIView() }
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: ProfileHeaderView.cellIdentifier) as! ProfileHeaderView
+            view.cellDelegate = self
             return view
         default :
             return UIView()
@@ -117,8 +113,6 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MyPageTableViewCell.identifier, for: indexPath) as? MyPageTableViewCell else { return UITableViewCell() }
-        
-        cell.delegate = self
         
         if indexPath.section == 0 {
             cell.configureCell(dummy1[indexPath.row])
