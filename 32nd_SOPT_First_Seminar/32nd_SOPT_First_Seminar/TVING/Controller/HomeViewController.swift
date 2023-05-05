@@ -12,6 +12,8 @@ import Then
 
 final class HomeViewController: BaseViewController {
     
+    let homeTableView = UITableView()
+    
     private let homeHeaderView = HomeHeaderView()
 
     override func setStyle() {

@@ -29,6 +29,8 @@ final class ProfileViewController: BaseViewController {
     private let dummy2 = MyPage.dummy2()
     
     override func attribute() {
+//        let logoutFooterView = LogoutFooterView()
+//        logoutFooterView.logoutButton.addTarget(self, action: #selector(mainButtonTapped), for: .touchUpInside)
         tableView.register(ProfileHeaderView.self,
                            forHeaderFooterViewReuseIdentifier: ProfileHeaderView.cellIdentifier)
         tableView.register(SettingFooterView.self,
@@ -60,6 +62,12 @@ extension ProfileViewController {
     func profileBeforeButtonTapped() {
         self.navigationController?.popViewController(animated: true)
     }
+//    @objc
+//    private func mainButtonTapped() {
+//        let loginViewController = LoginViewController()
+//        let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as! SceneDelegate
+//        sceneDelegate.window?.rootViewController = UINavigationController(rootViewController: loginViewController)
+//    }
 }
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {

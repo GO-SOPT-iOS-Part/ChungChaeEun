@@ -12,7 +12,7 @@ import Then
 
 class LogoutFooterView: UITableViewHeaderFooterView {
     
-    private let logoutButton = UIButton().then {
+    lazy var logoutButton = UIButton().then {
         $0.setTitle("로그아웃", for: .normal)
         $0.titleLabel!.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         $0.setTitleColor(.gray2, for: .normal)

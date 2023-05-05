@@ -35,7 +35,7 @@ final class HomeHeaderView: BaseView {
         $0.currentPage = 0
         $0.pageIndicatorTintColor = .gray3
         $0.currentPageIndicatorTintColor = .white
-        $0.transform = CGAffineTransform(scaleX: 1 , y: 1)
+        $0.transform = CGAffineTransform(scaleX: 0.7 , y: 0.7)
     }
     
     override func setStyle() {
@@ -50,8 +50,8 @@ final class HomeHeaderView: BaseView {
         }
         
         pageControl.snp.makeConstraints{
-            $0.top.equalTo(collectionView.snp.bottom).offset(15)
-            $0.leading.equalToSuperview().offset(-20)
+            $0.top.equalTo(collectionView.snp.bottom).offset(10)
+            $0.leading.equalToSuperview().offset(-40)
 
         }
     }
@@ -67,8 +67,6 @@ extension HomeHeaderView : UICollectionViewDelegate, UICollectionViewDataSource 
         cell.configurePosterCell(posterDummyCase[indexPath.row])
         return cell
     }
-    
-    
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let page = Int(targetContentOffset.pointee.x / self.frame.width)

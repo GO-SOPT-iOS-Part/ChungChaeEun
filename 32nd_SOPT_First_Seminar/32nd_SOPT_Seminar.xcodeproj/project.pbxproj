@@ -38,6 +38,11 @@
 		C383B5EE2A04BD1900D868AF /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383B5ED2A04BD1900D868AF /* HomeHeaderView.swift */; };
 		C383B5F02A04C0BF00D868AF /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383B5EF2A04C0BF00D868AF /* PosterCollectionViewCell.swift */; };
 		C383B5F22A04CB9800D868AF /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383B5F12A04CB9800D868AF /* Poster.swift */; };
+		C383B5F42A04E1BE00D868AF /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383B5F32A04E1BE00D868AF /* HomeTableViewCell.swift */; };
+		C383B5F62A04E1FC00D868AF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383B5F52A04E1FC00D868AF /* Home.swift */; };
+		C383B5F82A04E44D00D868AF /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383B5F72A04E44D00D868AF /* CategoryCollectionViewCell.swift */; };
+		C383B5FA2A04E48200D868AF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383B5F92A04E48200D868AF /* Category.swift */; };
+		C383B5FC2A04E94800D868AF /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C383B5FB2A04E94800D868AF /* MoreView.swift */; };
 		C38E7B4529E07B4700155E6A /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4429E07B4700155E6A /* Inject */; };
 		C38E7B4829E07B6100155E6A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4729E07B6100155E6A /* SnapKit */; };
 		C38E7B4B29E07B7200155E6A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C38E7B4A29E07B7200155E6A /* Then */; };
@@ -102,6 +107,11 @@
 		C383B5ED2A04BD1900D868AF /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		C383B5EF2A04C0BF00D868AF /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		C383B5F12A04CB9800D868AF /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
+		C383B5F32A04E1BE00D868AF /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		C383B5F52A04E1FC00D868AF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C383B5F72A04E44D00D868AF /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		C383B5F92A04E48200D868AF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		C383B5FB2A04E94800D868AF /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 		C38E7B4C29E133AF00155E6A /* FirstViewController_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_DelegatePattern.swift; sourceTree = "<group>"; };
 		C38E7B4E29E1343000155E6A /* SecondViewController_DelegatePattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController_DelegatePattern.swift; sourceTree = "<group>"; };
 		C38E7B5029E1375500155E6A /* FirstViewController_Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController_Closure.swift; sourceTree = "<group>"; };
@@ -245,6 +255,8 @@
 				C370E36429F8F35000606639 /* MyPageTableViewCell.swift */,
 				C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */,
 				C383B5EF2A04C0BF00D868AF /* PosterCollectionViewCell.swift */,
+				C383B5F32A04E1BE00D868AF /* HomeTableViewCell.swift */,
+				C383B5F72A04E44D00D868AF /* CategoryCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -254,6 +266,8 @@
 			children = (
 				C370E36729F8F48400606639 /* MyPage.swift */,
 				C383B5F12A04CB9800D868AF /* Poster.swift */,
+				C383B5F52A04E1FC00D868AF /* Home.swift */,
+				C383B5F92A04E48200D868AF /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -372,6 +386,7 @@
 				C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */,
 				C36A3A562A00ED82004D7BC3 /* SettingFooterView.swift */,
 				C36A3A582A00ED9A004D7BC3 /* LogoutFooterView.swift */,
+				C383B5FB2A04E94800D868AF /* MoreView.swift */,
 				C383B5ED2A04BD1900D868AF /* HomeHeaderView.swift */,
 			);
 			path = View;
@@ -485,8 +500,10 @@
 				C35BA1FD29F3B66A00734CF2 /* UIImage+.swift in Sources */,
 				C36A3A5B2A00EF13004D7BC3 /* UITableHeaderFooterView+.swift in Sources */,
 				C3EB07132A029CF9004E6F11 /* PageCollectionViewCell.swift in Sources */,
+				C383B5F62A04E1FC00D868AF /* Home.swift in Sources */,
 				C35BA1F029F3A88300734CF2 /* CommonView.swift in Sources */,
 				C38E7B5329E1376300155E6A /* SecondViewController_Closure.swift in Sources */,
+				C383B5FC2A04E94800D868AF /* MoreView.swift in Sources */,
 				C35BA1F829F3B35900734CF2 /* CarrotViewController.swift in Sources */,
 				C36A3A592A00ED9A004D7BC3 /* LogoutFooterView.swift in Sources */,
 				C38E7B6229E3950800155E6A /* LoginViewController.swift in Sources */,
@@ -494,11 +511,14 @@
 				C35BA1F429F3ABC500734CF2 /* BaseViewController.swift in Sources */,
 				C38E7B7729E3AAF100155E6A /* WelcomeViewController.swift in Sources */,
 				C38E7B6E29E398A500155E6A /* Color.swift in Sources */,
+				C383B5F42A04E1BE00D868AF /* HomeTableViewCell.swift in Sources */,
 				C38E7B4D29E133AF00155E6A /* FirstViewController_DelegatePattern.swift in Sources */,
 				C309F86429D7FB03007BAF98 /* AppDelegate.swift in Sources */,
 				C3B0BE5A29E528E000BF613A /* UITextField+.swift in Sources */,
 				C394531A29EE3FAF00FC9005 /* String+.swift in Sources */,
 				C3EE1C742A024EA2009AB36B /* TVProgramViewController.swift in Sources */,
+				C383B5F82A04E44D00D868AF /* CategoryCollectionViewCell.swift in Sources */,
+				C383B5FA2A04E48200D868AF /* Category.swift in Sources */,
 				C3EE1C722A024E9A009AB36B /* LiveViewController.swift in Sources */,
 				C35BA1F629F3B18400734CF2 /* BaseView.swift in Sources */,
 				C3B0BE5829E5270900BF613A /* NickNameBottomSheetViewController.swift in Sources */,
