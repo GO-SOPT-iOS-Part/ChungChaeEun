@@ -18,7 +18,6 @@ final class HomeHeaderView: BaseView {
         $0.scrollDirection = .horizontal
         $0.minimumInteritemSpacing = 0
         $0.minimumLineSpacing = 0
-//        $0.itemSize = CGSize(width: UIScreen.main.bounds.width , height: UIScreen.main.bounds.width * 1.328)
     }
     
     private lazy var collectionView = UICollectionView(frame: .zero,
@@ -31,15 +30,29 @@ final class HomeHeaderView: BaseView {
         $0.backgroundColor = .clear
     }
     
+    private let pageControl = UIPageControl().then {
+        $0.numberOfPages = 6
+        $0.currentPage = 0
+        $0.pageIndicatorTintColor = .gray3
+        $0.currentPageIndicatorTintColor = .white
+        $0.transform = CGAffineTransform(scaleX: 1 , y: 1)
+    }
+    
     override func setStyle() {
         self.backgroundColor = .clear
     }
     
     override func setLayout() {
-        self.addSubview(collectionView)
+        self.addSubviews(collectionView,pageControl)
         
         collectionView.snp.makeConstraints{
             $0.edges.equalToSuperview()
+        }
+        
+        pageControl.snp.makeConstraints{
+            $0.top.equalTo(collectionView.snp.bottom).offset(15)
+            $0.leading.equalToSuperview().offset(-20)
+
         }
     }
 }
@@ -54,10 +67,30 @@ extension HomeHeaderView : UICollectionViewDelegate, UICollectionViewDataSource 
         cell.configurePosterCell(posterDummyCase[indexPath.row])
         return cell
     }
+    
+    
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let page = Int(targetContentOffset.pointee.x / self.frame.width)
+        self.pageControl.currentPage = page
+      }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let width = scrollView.bounds.size.width
+        let x = scrollView.contentOffset.x + (width/2)
+        
+        let newPage = Int(x/width)
+        if pageControl.currentPage != newPage {
+            pageControl.currentPage = newPage
+        }
+    }
 }
 
+//제스처 하나에 하나씩 넘겨지도록
 extension HomeHeaderView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
     }
 }
+
+

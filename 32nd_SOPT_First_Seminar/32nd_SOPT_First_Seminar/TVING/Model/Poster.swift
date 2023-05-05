@@ -14,7 +14,7 @@ struct Poster {
 extension Poster {
     static func posterDummy() -> [Poster] {
         var poster: [Poster] = []
-        for number in 1...5 {
+        for number in 1...6 {
             poster.append(Poster(image: UIImage(named: "poster\(number)")!))
         }
         return poster
