@@ -132,6 +132,7 @@ final class ProfileHeaderView: UITableViewHeaderFooterView {
         self.beforeButton.addTarget(self, action: #selector(beforeButtonTapped), for: .touchUpInside)
     }
     
+///delegate 넘겨주는 거 잊지 말기!!!
     @objc
     func beforeButtonTapped() {
         cellDelegate?.beforeButtonTapped()

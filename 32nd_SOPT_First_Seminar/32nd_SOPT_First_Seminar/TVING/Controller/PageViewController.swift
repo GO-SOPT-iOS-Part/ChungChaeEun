@@ -84,11 +84,11 @@ extension PageViewController {
         
         homeView.addSubviews(topGradationImage, titleImage, profileButton)
         
-//        topGradationImage.snp.makeConstraints {
-//            $0.top.equalToSuperview()
-//            $0.width.equalToSuperview()
-//            $0.height.equalTo(94)
-//        }
+        topGradationImage.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(-10)
+            $0.width.equalToSuperview()
+            $0.height.equalTo(94)
+        }
         
         titleImage.snp.makeConstraints {
             $0.top.equalToSuperview().offset(59)
