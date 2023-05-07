@@ -739,9 +739,11 @@
 		C309F87529D7FB06007BAF98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_Key_Weathers = b26a34cbfbf1ec817f0e93a7a9e0ce32;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://54.180.123.11/";
+				BASE_URL_Weathers = "https://api.openweathermap.org/data/2.5/weather?";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q827V73L8U;
@@ -770,9 +772,11 @@
 		C309F87629D7FB06007BAF98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_Key_Weathers = b26a34cbfbf1ec817f0e93a7a9e0ce32;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://54.180.123.11/";
+				BASE_URL_Weathers = "https://api.openweathermap.org/data/2.5/weather?";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q827V73L8U;

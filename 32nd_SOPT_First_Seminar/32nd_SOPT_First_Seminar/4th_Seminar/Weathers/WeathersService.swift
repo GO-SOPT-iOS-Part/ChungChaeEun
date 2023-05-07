@@ -18,7 +18,7 @@ final class WeathersService {
     func weathers(cityName: String,
                 completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let url = Config.baseURL + "q=\(cityName)&appid=" + Config.APIKey
+        let url = Config.baseURLWeathers + "q=\(cityName)&appid=" + Config.APIKeyWeathers
         let header: HTTPHeaders = ["Content-Type" : "application/json"]
         let dataRequest = AF.request(url, method: .get, headers: header)
         
