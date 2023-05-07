@@ -90,7 +90,7 @@ private extension SecondViewController {
                                      backButton.heightAnchor.constraint(equalToConstant: 48)])
     }
     @objc
-    func backButtonTapped() {
+    private func backButtonTapped() {
         
         if self.navigationController == nil {
             self.dismiss(animated: true, completion: nil)
