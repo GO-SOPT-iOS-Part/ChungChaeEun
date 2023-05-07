@@ -72,6 +72,7 @@
 		C3BF9BB92A06284F00318290 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BB82A06284F00318290 /* SignUpResponse.swift */; };
 		C3BF9BBB2A06291A00318290 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BBA2A06291A00318290 /* SignUpService.swift */; };
 		C3BF9BBD2A06313E00318290 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BBC2A06313E00318290 /* FourthViewController.swift */; };
+		C3BF9BEB2A07BB9C00318290 /* Weathers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BEA2A07BB9C00318290 /* Weathers.swift */; };
 		C3EB07132A029CF9004E6F11 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */; };
 		C3EE1C722A024E9A009AB36B /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C712A024E99009AB36B /* LiveViewController.swift */; };
 		C3EE1C742A024EA2009AB36B /* TVProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */; };
@@ -144,6 +145,7 @@
 		C3BF9BB82A06284F00318290 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		C3BF9BBA2A06291A00318290 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		C3BF9BBC2A06313E00318290 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		C3BF9BEA2A07BB9C00318290 /* Weathers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weathers.swift; sourceTree = "<group>"; };
 		C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3EE1C712A024E99009AB36B /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVProgramViewController.swift; sourceTree = "<group>"; };
@@ -395,6 +397,7 @@
 		C3BF9BB32A0622FB00318290 /* 4th_Seminar */ = {
 			isa = PBXGroup;
 			children = (
+				C3BF9BE92A07BB7D00318290 /* Weathers */,
 				C3BF9BB42A06243800318290 /* Config.swift */,
 				C3BF9BB62A06244F00318290 /* NetworkResult.swift */,
 				C3BF9BB82A06284F00318290 /* SignUpResponse.swift */,
@@ -402,6 +405,14 @@
 				C3BF9BBC2A06313E00318290 /* FourthViewController.swift */,
 			);
 			path = 4th_Seminar;
+			sourceTree = "<group>";
+		};
+		C3BF9BE92A07BB7D00318290 /* Weathers */ = {
+			isa = PBXGroup;
+			children = (
+				C3BF9BEA2A07BB9C00318290 /* Weathers.swift */,
+			);
+			path = Weathers;
 			sourceTree = "<group>";
 		};
 		C3E4F07129F264FA00ECEA26 /* View */ = {
@@ -580,6 +591,7 @@
 				C36A3A572A00ED82004D7BC3 /* SettingFooterView.swift in Sources */,
 				C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */,
 				C370E36529F8F35000606639 /* MyPageTableViewCell.swift in Sources */,
+				C3BF9BEB2A07BB9C00318290 /* Weathers.swift in Sources */,
 				C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
