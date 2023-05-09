@@ -38,7 +38,7 @@ final class WeathersService {
     
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         switch statusCode {
-        case 200: return isValidData(data: data)
+        case 200, 201: return isValidData(data: data)
         case 400, 409: return isValidData(data: data)
         case 500: return .serverErr
         default: return .networkErr

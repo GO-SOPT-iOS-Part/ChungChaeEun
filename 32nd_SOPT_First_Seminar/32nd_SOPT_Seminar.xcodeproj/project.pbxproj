@@ -75,6 +75,8 @@
 		C3BF9BEB2A07BB9C00318290 /* Weathers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BEA2A07BB9C00318290 /* Weathers.swift */; };
 		C3BF9BED2A07BBDE00318290 /* WeathersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BEC2A07BBDE00318290 /* WeathersService.swift */; };
 		C3BF9BEF2A07BD6E00318290 /* WeathersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */; };
+		C3BF9BF12A07D24200318290 /* WeathersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */; };
+		C3BF9BF32A07D33400318290 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */; };
 		C3EB07132A029CF9004E6F11 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */; };
 		C3EE1C722A024E9A009AB36B /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C712A024E99009AB36B /* LiveViewController.swift */; };
 		C3EE1C742A024EA2009AB36B /* TVProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */; };
@@ -150,6 +152,8 @@
 		C3BF9BEA2A07BB9C00318290 /* Weathers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weathers.swift; sourceTree = "<group>"; };
 		C3BF9BEC2A07BBDE00318290 /* WeathersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersService.swift; sourceTree = "<group>"; };
 		C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersViewController.swift; sourceTree = "<group>"; };
+		C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersTableViewCell.swift; sourceTree = "<group>"; };
+		C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3EE1C712A024E99009AB36B /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVProgramViewController.swift; sourceTree = "<group>"; };
@@ -417,6 +421,8 @@
 				C3BF9BEA2A07BB9C00318290 /* Weathers.swift */,
 				C3BF9BEC2A07BBDE00318290 /* WeathersService.swift */,
 				C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */,
+				C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */,
+				C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */,
 			);
 			path = Weathers;
 			sourceTree = "<group>";
@@ -595,9 +601,11 @@
 				C357D5BF29F8C5DD00DA8E63 /* HomeViewController.swift in Sources */,
 				C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */,
 				C383B5EE2A04BD1900D868AF /* HomeHeaderView.swift in Sources */,
+				C3BF9BF32A07D33400318290 /* ImageCacheManager.swift in Sources */,
 				C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */,
 				C36A3A572A00ED82004D7BC3 /* SettingFooterView.swift in Sources */,
 				C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */,
+				C3BF9BF12A07D24200318290 /* WeathersTableViewCell.swift in Sources */,
 				C370E36529F8F35000606639 /* MyPageTableViewCell.swift in Sources */,
 				C3BF9BEB2A07BB9C00318290 /* Weathers.swift in Sources */,
 				C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */,

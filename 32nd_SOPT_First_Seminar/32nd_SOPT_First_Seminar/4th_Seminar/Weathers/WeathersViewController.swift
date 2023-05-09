@@ -6,12 +6,23 @@
 //
 import UIKit
 
-class WeathersViewController: UIViewController {
+import SnapKit
+import Then
 
+final class WeathersViewController: UIViewController {
+    
+    private let tableView = UITableView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         weathers()
+        setStyle()
+        setLayout()
     }
+}
+
+extension WeathersViewController {
     
     private func weathers() {
         WeathersService.shared.weathers(cityName: "seoul" ) { response in
@@ -23,6 +34,14 @@ class WeathersViewController: UIViewController {
                 return
             }
         }
+    }
+    
+    private func setStyle() {
+        view.backgroundColor = .white
+    }
+    
+    private func setLayout() {
+        
     }
 
 }
