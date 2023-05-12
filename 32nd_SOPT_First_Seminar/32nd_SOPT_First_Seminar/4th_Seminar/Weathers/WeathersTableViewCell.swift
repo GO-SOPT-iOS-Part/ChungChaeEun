@@ -76,4 +76,12 @@ final class WeathersTableViewCell: UITableViewCell {
             $0.top.equalTo(tempLabel.snp.bottom).offset(15)
         }
     }
+    
+    func configureWeathersCell(_ weathers: Weathers) {
+//        weathersImage.image = weathers.image
+        weathersImage.image = UIImage(systemName: "cloud.drizzle")
+        cityLabel.text = weathers.name
+        tempLabel.text = "현재 온도: " + String(weathers.main.temp)
+        humidityLabel.text = "습도: " + String(weathers.main.humidity)
+    }
 }

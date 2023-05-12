@@ -11,12 +11,23 @@ import Then
 
 final class WeathersViewController: UIViewController {
     
-    private let tableView = UITableView()
+    var cityWeathers: [Weathers] = [] {
+        didSet {
+            // 변화가 있을 떄마다 reload 해주어서 변화값을 보여줌
+            self.tableView.reloadData()
+        }
+    }
     
+    let city: [String] = ["gongju", "gwangju", "gumi", "gunsan", "daegu", "daejeon", "mokpo", "busan", "seosan", "seoul", "sokcho", "suwon", "suncheon", "ulsan", "iksan", "jeonju", "jeju", "cheonan", "cheongju", "chuncheon"]
+    
+    private let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         weathers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         setStyle()
         setLayout()
     }
@@ -25,24 +36,50 @@ final class WeathersViewController: UIViewController {
 extension WeathersViewController {
     
     private func weathers() {
-        WeathersService.shared.weathers(cityName: "seoul" ) { response in
-            switch response {
-            case .success(let data):
-                guard let data = data as? Weathers else { return }
-                dump(data)
-            default:
-                return
+        city.forEach {
+            WeathersService.shared.weathers(cityName: $0 ) { response in
+                switch response {
+                case .success(let data):
+                    guard let data = data as? Weathers else { return }
+                    //                    dump(data)
+//                    print(self.cityWeathers)
+                    self.cityWeathers.append(data)
+                default:
+                    return
+                }
             }
         }
     }
     
     private func setStyle() {
         view.backgroundColor = .white
+        
+        tableView.do {
+            $0.register(WeathersTableViewCell.self, forCellReuseIdentifier: WeathersTableViewCell.identifier)
+            $0.rowHeight = 120
+            $0.delegate = self
+            $0.dataSource = self
+        }
     }
     
     private func setLayout() {
+        view.addSubviews(tableView)
         
+        tableView.snp.makeConstraints{
+            $0.edges.equalToSuperview()
+        }
     }
-
 }
 
+extension WeathersViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cityWeathers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: WeathersTableViewCell.identifier, for: indexPath) as? WeathersTableViewCell else { return UITableViewCell() }
+        
+        cell.configureWeathersCell(cityWeathers[indexPath.row])
+        return cell
+    }
+}
