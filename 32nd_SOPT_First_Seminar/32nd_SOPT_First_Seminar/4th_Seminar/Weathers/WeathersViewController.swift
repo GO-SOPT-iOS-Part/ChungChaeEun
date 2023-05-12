@@ -61,6 +61,8 @@ extension WeathersViewController {
             $0.dataSource = self
         }
         self.navigationController?.navigationBar.topItem?.title = "날씨"
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
     private func setLayout() {

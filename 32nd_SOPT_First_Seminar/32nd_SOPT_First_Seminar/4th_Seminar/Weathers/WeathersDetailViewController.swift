@@ -63,7 +63,10 @@ extension WeathersDetailViewController {
             $0.backgroundColor = .gray1
         }
         self.navigationController?.navigationBar.tintColor = .black
-        self.navigationController?.navigationBar.topItem?.title = cityLabel.text
+        self.navigationItem.title = cityLabel.text
+        
+//        self.navigationItem.titleView?.tintColor = .black
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
     }
     
     private func setLayout() {
