@@ -25,11 +25,9 @@ final class WeathersDetailCollectionViewCell: UICollectionViewCell {
     }
     let titleLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 25)
-//        $0.text = "제목"
     }
     let contentLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 15)
-//        $0.text = "내용"
     }
     
     override init(frame: CGRect) {
@@ -64,21 +62,4 @@ final class WeathersDetailCollectionViewCell: UICollectionViewCell {
             $0.leading.equalTo(titleLabel)
         }
     }
-    
-//    func configureFeelsLikeCell(_ weathers: Weathers) {
-//        titleLabel.text = "체감 온도"
-//        contentLabel.text = String(weathers.main.feels_like) + "ºC"
-//    }
-//    func configureHumidityCell(_ weathers: Weathers) {
-//        titleLabel.text = "습도"
-//        contentLabel.text = String(weathers.main.humidity) + "%"
-//    }
-//    func configurePressureCell(_ weathers: Weathers) {
-//        titleLabel.text = "압력"
-//        contentLabel.text = String(weathers.main.pressure) + "hpa"
-//    }
-//    func configureWindCell(_ weathers: Weathers) {
-//        titleLabel.text = "바람"
-//        contentLabel.text = String(weathers.wind.speed) + " m/s"
-//    }
 }

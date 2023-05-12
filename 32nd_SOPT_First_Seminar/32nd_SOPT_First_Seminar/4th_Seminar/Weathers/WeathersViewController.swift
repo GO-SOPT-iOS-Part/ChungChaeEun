@@ -41,7 +41,6 @@ extension WeathersViewController {
                 switch response {
                 case .success(let data):
                     guard let data = data as? Weathers else { return }
-//                    dump(data)
                     print(self.cityWeathers)
                     self.cityWeathers.append(data)
                 default:
@@ -72,9 +71,6 @@ extension WeathersViewController {
             $0.edges.equalToSuperview()
         }
     }
-//    func setData() {
-//
-//    }
 }
 
 extension WeathersViewController: UITableViewDelegate, UITableViewDataSource {
@@ -86,7 +82,6 @@ extension WeathersViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WeathersTableViewCell.identifier, for: indexPath) as? WeathersTableViewCell else { return UITableViewCell() }
         
         cell.configureWeathersCell(cityWeathers[indexPath.row])
-//        let cellNumber = cityWeathers[indexPath.row]
         return cell
     }
     

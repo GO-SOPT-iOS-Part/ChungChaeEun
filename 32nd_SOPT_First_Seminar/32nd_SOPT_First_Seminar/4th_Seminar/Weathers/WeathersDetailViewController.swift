@@ -20,8 +20,6 @@ final class WeathersDetailViewController: UIViewController {
     let separateLine = UIView()
     let weathersFlowLayout = UICollectionViewFlowLayout().then {
         $0.scrollDirection = .vertical
-//        $0.minimumInteritemSpacing = 10
-//        $0.minimumLineSpacing = 10
     }
     
     var feelsLike: String = ""
@@ -64,8 +62,6 @@ extension WeathersDetailViewController {
         }
         self.navigationController?.navigationBar.tintColor = .black
         self.navigationItem.title = cityLabel.text
-        
-//        self.navigationItem.titleView?.tintColor = .black
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
     }
     
