@@ -13,7 +13,7 @@ final class WeathersViewController: UIViewController {
     
     var cityWeathers: [Weathers] = [] {
         didSet {
-            // 변화가 있을 떄마다 reload 해주어서 변화값을 보여줌
+//             변화가 있을 떄마다 reload 해주어서 변화값을 보여줌
             self.tableView.reloadData()
         }
     }
@@ -41,8 +41,8 @@ extension WeathersViewController {
                 switch response {
                 case .success(let data):
                     guard let data = data as? Weathers else { return }
-                    //                    dump(data)
-//                    print(self.cityWeathers)
+//                    dump(data)
+                    print(self.cityWeathers)
                     self.cityWeathers.append(data)
                 default:
                     return
@@ -81,5 +81,15 @@ extension WeathersViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.configureWeathersCell(cityWeathers[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Click Cell Number:" + String(indexPath.row))
+        
+        let weathersDetailVC = WeathersDetailViewController()
+
+        weathersDetailVC.configureWeathersDetailCell(cityWeathers[indexPath.row])
+        
+        self.navigationController?.pushViewController(weathersDetailVC, animated: true)
     }
 }

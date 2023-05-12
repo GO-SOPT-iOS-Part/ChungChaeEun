@@ -77,6 +77,7 @@
 		C3BF9BEF2A07BD6E00318290 /* WeathersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */; };
 		C3BF9BF12A07D24200318290 /* WeathersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */; };
 		C3BF9BF32A07D33400318290 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */; };
+		C3BF9BF52A0E137B00318290 /* WeathersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF42A0E137B00318290 /* WeathersDetailViewController.swift */; };
 		C3EB07132A029CF9004E6F11 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */; };
 		C3EE1C722A024E9A009AB36B /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C712A024E99009AB36B /* LiveViewController.swift */; };
 		C3EE1C742A024EA2009AB36B /* TVProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */; };
@@ -154,6 +155,7 @@
 		C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersViewController.swift; sourceTree = "<group>"; };
 		C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersTableViewCell.swift; sourceTree = "<group>"; };
 		C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		C3BF9BF42A0E137B00318290 /* WeathersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersDetailViewController.swift; sourceTree = "<group>"; };
 		C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3EE1C712A024E99009AB36B /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVProgramViewController.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				C3BF9BEA2A07BB9C00318290 /* Weathers.swift */,
 				C3BF9BEC2A07BBDE00318290 /* WeathersService.swift */,
 				C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */,
+				C3BF9BF42A0E137B00318290 /* WeathersDetailViewController.swift */,
 				C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */,
 				C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */,
 			);
@@ -590,6 +593,7 @@
 				C38E7B5129E1375500155E6A /* FirstViewController_Closure.swift in Sources */,
 				C370E36129F8D38D00606639 /* ProfileViewController.swift in Sources */,
 				C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */,
+				C3BF9BF52A0E137B00318290 /* WeathersDetailViewController.swift in Sources */,
 				C35BA1FB29F3B59500734CF2 /* Carrot.swift in Sources */,
 				C309F87C29D80FA5007BAF98 /* SecondViewController.swift in Sources */,
 				C36A3A552A00D497004D7BC3 /* ProfileHeaderView.swift in Sources */,
