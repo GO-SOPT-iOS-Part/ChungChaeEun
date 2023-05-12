@@ -18,7 +18,7 @@ final class WeathersTableViewCell: UITableViewCell {
     private let cityLabel = UILabel()
     private let tempLabel = UILabel()
     private let humidityLabel = UILabel()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -50,10 +50,10 @@ final class WeathersTableViewCell: UITableViewCell {
     
     func setLayout() {
         contentView.addSubviews(
-        weathersImage,
-        cityLabel,
-        tempLabel,
-        humidityLabel)
+            weathersImage,
+            cityLabel,
+            tempLabel,
+            humidityLabel)
         
         weathersImage.snp.makeConstraints{
             $0.leading.equalToSuperview().offset(20)
@@ -78,10 +78,11 @@ final class WeathersTableViewCell: UITableViewCell {
     }
     
     func configureWeathersCell(_ weathers: Weathers) {
-//        weathersImage.image = weathers.image
-        weathersImage.image = UIImage(systemName: "cloud.drizzle")
+        if let imageURL = weathers.weather.first?.icon {
+            weathersImage.getImageFromURL(imageURL)
+        }
         cityLabel.text = weathers.name
-        tempLabel.text = "현재 온도: " + String(weathers.main.temp)
-        humidityLabel.text = "습도: " + String(weathers.main.humidity)
+        tempLabel.text = "현재 온도: " + String(weathers.main.temp) + "ºC"
+        humidityLabel.text = "습도: " + String(weathers.main.humidity) + "%"
     }
 }
