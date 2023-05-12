@@ -70,6 +70,9 @@ extension WeathersViewController {
             $0.edges.equalToSuperview()
         }
     }
+//    func setData() {
+//
+//    }
 }
 
 extension WeathersViewController: UITableViewDelegate, UITableViewDataSource {
@@ -81,6 +84,7 @@ extension WeathersViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: WeathersTableViewCell.identifier, for: indexPath) as? WeathersTableViewCell else { return UITableViewCell() }
         
         cell.configureWeathersCell(cityWeathers[indexPath.row])
+//        let cellNumber = cityWeathers[indexPath.row]
         return cell
     }
     

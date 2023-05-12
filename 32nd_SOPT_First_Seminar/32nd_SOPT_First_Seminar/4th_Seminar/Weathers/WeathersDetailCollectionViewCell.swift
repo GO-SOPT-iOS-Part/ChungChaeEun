@@ -15,16 +15,21 @@ final class WeathersDetailCollectionViewCell: UICollectionViewCell {
     static let weathersIdentifier = "WeathersDetailCollectionViewCell"
     
     let contentsView = UIView().then {
+        $0.backgroundColor = .white
         $0.layer.cornerRadius = 10
-        $0.layer.shadowColor = UIColor.gray.cgColor
-        $0.layer.shadowRadius = 10
+        $0.layer.shadowColor = UIColor.black.cgColor
+        $0.layer.shadowRadius = 5
+        $0.layer.shadowOffset = CGSize(width: 3, height: 3)
+        $0.layer.shadowOpacity = 0.5
         $0.layer.masksToBounds = false
     }
     let titleLabel = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 25)
+//        $0.text = "제목"
     }
     let contentLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 15)
+//        $0.text = "내용"
     }
     
     override init(frame: CGRect) {
@@ -47,7 +52,8 @@ final class WeathersDetailCollectionViewCell: UICollectionViewCell {
         contentsView.addSubviews(titleLabel, contentLabel)
         
         contentsView.snp.makeConstraints{
-            $0.width.height.equalTo((UIScreen.main.bounds.width - 20) / 2)
+//            $0.width.height.equalTo((UIScreen.main.bounds.width - 40) / 2)
+            $0.edges.equalToSuperview()
         }
         titleLabel.snp.makeConstraints{
             $0.top.equalToSuperview().offset(20)
@@ -55,7 +61,24 @@ final class WeathersDetailCollectionViewCell: UICollectionViewCell {
         }
         contentLabel.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(15)
-            $0.leading.equalTo(contentLabel)
+            $0.leading.equalTo(titleLabel)
         }
     }
+    
+//    func configureFeelsLikeCell(_ weathers: Weathers) {
+//        titleLabel.text = "체감 온도"
+//        contentLabel.text = String(weathers.main.feels_like) + "ºC"
+//    }
+//    func configureHumidityCell(_ weathers: Weathers) {
+//        titleLabel.text = "습도"
+//        contentLabel.text = String(weathers.main.humidity) + "%"
+//    }
+//    func configurePressureCell(_ weathers: Weathers) {
+//        titleLabel.text = "압력"
+//        contentLabel.text = String(weathers.main.pressure) + "hpa"
+//    }
+//    func configureWindCell(_ weathers: Weathers) {
+//        titleLabel.text = "바람"
+//        contentLabel.text = String(weathers.wind.speed) + " m/s"
+//    }
 }

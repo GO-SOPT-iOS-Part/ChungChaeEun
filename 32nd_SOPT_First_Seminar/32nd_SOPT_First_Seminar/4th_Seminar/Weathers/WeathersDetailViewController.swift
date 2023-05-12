@@ -24,6 +24,11 @@ final class WeathersDetailViewController: UIViewController {
 //        $0.minimumLineSpacing = 10
     }
     
+    var feelsLike: String = ""
+    var humidity: String = ""
+    var pressure: String = ""
+    var wind: String = ""
+    
     lazy var weathersCollectionView = UICollectionView(frame: .zero,
                                                                collectionViewLayout: self.weathersFlowLayout).then{
         $0.register(WeathersDetailCollectionViewCell.self, forCellWithReuseIdentifier: WeathersDetailCollectionViewCell.weathersIdentifier)
@@ -97,8 +102,10 @@ extension WeathersDetailViewController {
             $0.height.equalTo(1)
         }
         weathersCollectionView.snp.makeConstraints{
-            $0.top.equalTo(separateLine.snp.bottom).offset(10)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.top.equalTo(separateLine.snp.bottom).offset(30)
+            $0.leading.trailing.equalToSuperview().inset(5)
+            $0.bottom.equalToSuperview()
+            $0.centerX.equalToSuperview()
         }
     }
     func configureWeathersDetailCell(_ weathers: Weathers) {
@@ -109,6 +116,10 @@ extension WeathersDetailViewController {
         tempLabel.text = String(weathers.main.temp) + "ºC"
         descriptionLabel.text = weathers.weather[0].descript
         maxMinLabel.text = "최대: " + String(weathers.main.temp_max) + "ºC  최소: " + String(weathers.main.temp_min) + "ºC"
+        self.feelsLike = String(weathers.main.feels_like) + "ºC"
+        self.humidity = String(weathers.main.humidity) + "%"
+        self.pressure = String(weathers.main.pressure) + "hpa"
+        self.wind = String(weathers.wind.speed) + " m/s"
     }
 }
 
@@ -122,7 +133,7 @@ extension WeathersDetailViewController: UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width - 10) / 2, height: (UIScreen.main.bounds.width - 10) / 2)
+        return CGSize(width: (UIScreen.main.bounds.width - 20) / 2, height: (UIScreen.main.bounds.width - 20) / 2)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -132,23 +143,19 @@ extension WeathersDetailViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeathersDetailCollectionViewCell.weathersIdentifier, for: indexPath) as? WeathersDetailCollectionViewCell else { return UICollectionViewCell() }
-//        cell.configurePosterCell(posterDummyCase[indexPath.row])
-        let weathersDetailCollectionViewCell = WeathersDetailCollectionViewCell()
-//        let weathers = Weathers
         switch indexPath.item {
         case 0:
-            weathersDetailCollectionViewCell.titleLabel.text = "체감 온도"
-//            weathersDetailCollectionViewCell.contentLabel.text = weathers.main.feels_like
-            weathersDetailCollectionViewCell.contentLabel.text = "1"
+            cell.titleLabel.text = "체감 온도"
+            cell.contentLabel.text = feelsLike
         case 1:
-            weathersDetailCollectionViewCell.titleLabel.text = "습도"
-            weathersDetailCollectionViewCell.contentLabel.text = "2"
+            cell.titleLabel.text = "습도"
+            cell.contentLabel.text = humidity
         case 2:
-            weathersDetailCollectionViewCell.titleLabel.text = "압력"
-            weathersDetailCollectionViewCell.contentLabel.text = "3"
+            cell.titleLabel.text = "압력"
+            cell.contentLabel.text = pressure
         case 3:
-            weathersDetailCollectionViewCell.titleLabel.text = "바람"
-            weathersDetailCollectionViewCell.contentLabel.text = "4"
+            cell.titleLabel.text = "바람"
+            cell.contentLabel.text = wind
         default:
             return UICollectionViewCell()
         }
