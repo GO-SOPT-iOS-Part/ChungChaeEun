@@ -60,6 +60,7 @@ extension WeathersViewController {
             $0.delegate = self
             $0.dataSource = self
         }
+        self.navigationController?.navigationBar.topItem?.title = "날씨"
     }
     
     private func setLayout() {
@@ -89,6 +90,7 @@ extension WeathersViewController: UITableViewDelegate, UITableViewDataSource {
         let weathersDetailVC = WeathersDetailViewController()
 
         weathersDetailVC.configureWeathersDetailCell(cityWeathers[indexPath.row])
+        weathersDetailVC.weathersCollectionView.reloadData()
         
         self.navigationController?.pushViewController(weathersDetailVC, animated: true)
     }
