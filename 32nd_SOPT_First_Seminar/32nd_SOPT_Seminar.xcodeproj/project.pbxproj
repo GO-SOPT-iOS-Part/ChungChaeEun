@@ -72,6 +72,13 @@
 		C3BF9BB92A06284F00318290 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BB82A06284F00318290 /* SignUpResponse.swift */; };
 		C3BF9BBB2A06291A00318290 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BBA2A06291A00318290 /* SignUpService.swift */; };
 		C3BF9BBD2A06313E00318290 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BBC2A06313E00318290 /* FourthViewController.swift */; };
+		C3BF9BEB2A07BB9C00318290 /* Weathers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BEA2A07BB9C00318290 /* Weathers.swift */; };
+		C3BF9BED2A07BBDE00318290 /* WeathersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BEC2A07BBDE00318290 /* WeathersService.swift */; };
+		C3BF9BEF2A07BD6E00318290 /* WeathersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */; };
+		C3BF9BF12A07D24200318290 /* WeathersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */; };
+		C3BF9BF32A07D33400318290 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */; };
+		C3BF9BF52A0E137B00318290 /* WeathersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF42A0E137B00318290 /* WeathersDetailViewController.swift */; };
+		C3BF9BF72A0E2B7600318290 /* WeathersDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF9BF62A0E2B7600318290 /* WeathersDetailCollectionViewCell.swift */; };
 		C3EB07132A029CF9004E6F11 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */; };
 		C3EE1C722A024E9A009AB36B /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C712A024E99009AB36B /* LiveViewController.swift */; };
 		C3EE1C742A024EA2009AB36B /* TVProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */; };
@@ -144,6 +151,13 @@
 		C3BF9BB82A06284F00318290 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		C3BF9BBA2A06291A00318290 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		C3BF9BBC2A06313E00318290 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		C3BF9BEA2A07BB9C00318290 /* Weathers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weathers.swift; sourceTree = "<group>"; };
+		C3BF9BEC2A07BBDE00318290 /* WeathersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersService.swift; sourceTree = "<group>"; };
+		C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersViewController.swift; sourceTree = "<group>"; };
+		C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersTableViewCell.swift; sourceTree = "<group>"; };
+		C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		C3BF9BF42A0E137B00318290 /* WeathersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersDetailViewController.swift; sourceTree = "<group>"; };
+		C3BF9BF62A0E2B7600318290 /* WeathersDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeathersDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3EB07122A029CF9004E6F11 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3EE1C712A024E99009AB36B /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		C3EE1C732A024EA2009AB36B /* TVProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVProgramViewController.swift; sourceTree = "<group>"; };
@@ -395,6 +409,7 @@
 		C3BF9BB32A0622FB00318290 /* 4th_Seminar */ = {
 			isa = PBXGroup;
 			children = (
+				C3BF9BE92A07BB7D00318290 /* Weathers */,
 				C3BF9BB42A06243800318290 /* Config.swift */,
 				C3BF9BB62A06244F00318290 /* NetworkResult.swift */,
 				C3BF9BB82A06284F00318290 /* SignUpResponse.swift */,
@@ -402,6 +417,20 @@
 				C3BF9BBC2A06313E00318290 /* FourthViewController.swift */,
 			);
 			path = 4th_Seminar;
+			sourceTree = "<group>";
+		};
+		C3BF9BE92A07BB7D00318290 /* Weathers */ = {
+			isa = PBXGroup;
+			children = (
+				C3BF9BEA2A07BB9C00318290 /* Weathers.swift */,
+				C3BF9BEC2A07BBDE00318290 /* WeathersService.swift */,
+				C3BF9BEE2A07BD6E00318290 /* WeathersViewController.swift */,
+				C3BF9BF42A0E137B00318290 /* WeathersDetailViewController.swift */,
+				C3BF9BF62A0E2B7600318290 /* WeathersDetailCollectionViewCell.swift */,
+				C3BF9BF02A07D24200318290 /* WeathersTableViewCell.swift */,
+				C3BF9BF22A07D33400318290 /* ImageCacheManager.swift */,
+			);
+			path = Weathers;
 			sourceTree = "<group>";
 		};
 		C3E4F07129F264FA00ECEA26 /* View */ = {
@@ -521,11 +550,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3BF9BF72A0E2B7600318290 /* WeathersDetailCollectionViewCell.swift in Sources */,
+				C3BF9BED2A07BBDE00318290 /* WeathersService.swift in Sources */,
 				C383B5F02A04C0BF00D868AF /* PosterCollectionViewCell.swift in Sources */,
 				C38E7B5529E146CE00155E6A /* ClickTimeViewController.swift in Sources */,
 				C3EE1C782A024ECA009AB36B /* ParamountViewController.swift in Sources */,
 				C3BF9BBB2A06291A00318290 /* SignUpService.swift in Sources */,
 				C35BA1FD29F3B66A00734CF2 /* UIImage+.swift in Sources */,
+				C3BF9BEF2A07BD6E00318290 /* WeathersViewController.swift in Sources */,
 				C36A3A5B2A00EF13004D7BC3 /* UITableHeaderFooterView+.swift in Sources */,
 				C3EB07132A029CF9004E6F11 /* PageCollectionViewCell.swift in Sources */,
 				C383B5F62A04E1FC00D868AF /* Home.swift in Sources */,
@@ -565,6 +597,7 @@
 				C38E7B5129E1375500155E6A /* FirstViewController_Closure.swift in Sources */,
 				C370E36129F8D38D00606639 /* ProfileViewController.swift in Sources */,
 				C38E7B5B29E14C9400155E6A /* UIView+.swift in Sources */,
+				C3BF9BF52A0E137B00318290 /* WeathersDetailViewController.swift in Sources */,
 				C35BA1FB29F3B59500734CF2 /* Carrot.swift in Sources */,
 				C309F87C29D80FA5007BAF98 /* SecondViewController.swift in Sources */,
 				C36A3A552A00D497004D7BC3 /* ProfileHeaderView.swift in Sources */,
@@ -576,10 +609,13 @@
 				C357D5BF29F8C5DD00DA8E63 /* HomeViewController.swift in Sources */,
 				C309F87829D806C7007BAF98 /* FirstViewController.swift in Sources */,
 				C383B5EE2A04BD1900D868AF /* HomeHeaderView.swift in Sources */,
+				C3BF9BF32A07D33400318290 /* ImageCacheManager.swift in Sources */,
 				C370E36329F8ED3F00606639 /* UILabel+.swift in Sources */,
 				C36A3A572A00ED82004D7BC3 /* SettingFooterView.swift in Sources */,
 				C3B0BE5C29E5290700BF613A /* UIButton+.swift in Sources */,
+				C3BF9BF12A07D24200318290 /* WeathersTableViewCell.swift in Sources */,
 				C370E36529F8F35000606639 /* MyPageTableViewCell.swift in Sources */,
+				C3BF9BEB2A07BB9C00318290 /* Weathers.swift in Sources */,
 				C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,9 +759,11 @@
 		C309F87529D7FB06007BAF98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_Key_Weathers = b26a34cbfbf1ec817f0e93a7a9e0ce32;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://54.180.123.11/";
+				BASE_URL_Weathers = "https://api.openweathermap.org/data/2.5/weather?";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q827V73L8U;
@@ -754,9 +792,11 @@
 		C309F87629D7FB06007BAF98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				API_Key_Weathers = b26a34cbfbf1ec817f0e93a7a9e0ce32;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				BASE_URL = "http://54.180.123.11/";
+				BASE_URL_Weathers = "https://api.openweathermap.org/data/2.5/weather?";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q827V73L8U;

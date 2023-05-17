@@ -8,8 +8,6 @@ import UIKit
 
 final class FourthViewController: UIViewController {
     
-    let array : [Array] = ["a", "b"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
    
