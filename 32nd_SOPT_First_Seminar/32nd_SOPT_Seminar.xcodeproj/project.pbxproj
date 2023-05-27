@@ -27,6 +27,10 @@
 		C35BA20129F3BF1300734CF2 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */; };
 		C35BA20529F3BFA100734CF2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20429F3BFA100734CF2 /* Photo.swift */; };
 		C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35BA20629F3C14B00734CF2 /* PhotoCell.swift */; };
+		C35C58332A21D54400874178 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C35C58322A21D54400874178 /* Realm */; };
+		C35C58352A21D54400874178 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C35C58342A21D54400874178 /* RealmSwift */; };
+		C35C58372A21F4C800874178 /* CarrotTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C58362A21F4C800874178 /* CarrotTabBarController.swift */; };
+		C35C58392A21F4EA00874178 /* CarrotStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35C58382A21F4EA00874178 /* CarrotStarViewController.swift */; };
 		C36A3A552A00D497004D7BC3 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */; };
 		C36A3A572A00ED82004D7BC3 /* SettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A3A562A00ED82004D7BC3 /* SettingFooterView.swift */; };
 		C36A3A592A00ED9A004D7BC3 /* LogoutFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A3A582A00ED9A004D7BC3 /* LogoutFooterView.swift */; };
@@ -109,6 +113,8 @@
 		C35BA20029F3BF1300734CF2 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		C35BA20429F3BFA100734CF2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C35BA20629F3C14B00734CF2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		C35C58362A21F4C800874178 /* CarrotTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotTabBarController.swift; sourceTree = "<group>"; };
+		C35C58382A21F4EA00874178 /* CarrotStarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotStarViewController.swift; sourceTree = "<group>"; };
 		C36A3A542A00D497004D7BC3 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		C36A3A562A00ED82004D7BC3 /* SettingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFooterView.swift; sourceTree = "<group>"; };
 		C36A3A582A00ED9A004D7BC3 /* LogoutFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutFooterView.swift; sourceTree = "<group>"; };
@@ -171,10 +177,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C35C58352A21D54400874178 /* RealmSwift in Frameworks */,
 				C38E7B4529E07B4700155E6A /* Inject in Frameworks */,
 				C383B5FF2A04F29800D868AF /* Alamofire in Frameworks */,
 				C38E7B4B29E07B7200155E6A /* Then in Frameworks */,
 				C38E7B4829E07B6100155E6A /* SnapKit in Frameworks */,
+				C35C58332A21D54400874178 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +261,8 @@
 				C35BA1F729F3B35900734CF2 /* CarrotViewController.swift */,
 				C35BA1FE29F3B73A00734CF2 /* CarrotTableViewCell.swift */,
 				C35BA1FA29F3B59500734CF2 /* Carrot.swift */,
+				C35C58362A21F4C800874178 /* CarrotTabBarController.swift */,
+				C35C58382A21F4EA00874178 /* CarrotStarViewController.swift */,
 			);
 			path = Carrot;
 			sourceTree = "<group>";
@@ -484,6 +494,8 @@
 				C38E7B4729E07B6100155E6A /* SnapKit */,
 				C38E7B4A29E07B7200155E6A /* Then */,
 				C383B5FE2A04F29800D868AF /* Alamofire */,
+				C35C58322A21D54400874178 /* Realm */,
+				C35C58342A21D54400874178 /* RealmSwift */,
 			);
 			productName = 32nd_SOPT_First_Seminar;
 			productReference = C309F86029D7FB03007BAF98 /* 32nd_SOPT_Seminar.app */;
@@ -518,6 +530,7 @@
 				C38E7B4629E07B6100155E6A /* XCRemoteSwiftPackageReference "SnapKit" */,
 				C38E7B4929E07B7200155E6A /* XCRemoteSwiftPackageReference "Then" */,
 				C383B5FD2A04F29700D868AF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C35C58312A21D54400874178 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = C309F86129D7FB03007BAF98 /* Products */;
 			projectDirPath = "";
@@ -571,6 +584,7 @@
 				C35BA1F429F3ABC500734CF2 /* BaseViewController.swift in Sources */,
 				C38E7B7729E3AAF100155E6A /* WelcomeViewController.swift in Sources */,
 				C38E7B6E29E398A500155E6A /* Color.swift in Sources */,
+				C35C58392A21F4EA00874178 /* CarrotStarViewController.swift in Sources */,
 				C383B5F42A04E1BE00D868AF /* HomeTableViewCell.swift in Sources */,
 				C3BF9BB72A06244F00318290 /* NetworkResult.swift in Sources */,
 				C38E7B4D29E133AF00155E6A /* FirstViewController_DelegatePattern.swift in Sources */,
@@ -592,6 +606,7 @@
 				C35BA1F229F3A97500734CF2 /* Third_SecondViewController.swift in Sources */,
 				C35BA20729F3C14B00734CF2 /* PhotoCell.swift in Sources */,
 				C38E7B5729E146D300155E6A /* ClickViewController.swift in Sources */,
+				C35C58372A21F4C800874178 /* CarrotTabBarController.swift in Sources */,
 				C38E7B5929E146DB00155E6A /* GridViewController.swift in Sources */,
 				C3EE1C7A2A025500009AB36B /* PageViewController.swift in Sources */,
 				C38E7B5129E1375500155E6A /* FirstViewController_Closure.swift in Sources */,
@@ -846,6 +861,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C35C58312A21D54400874178 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		C383B5FD2A04F29700D868AF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -881,6 +904,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C35C58322A21D54400874178 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C35C58312A21D54400874178 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		C35C58342A21D54400874178 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C35C58312A21D54400874178 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		C383B5FE2A04F29800D868AF /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C383B5FD2A04F29700D868AF /* XCRemoteSwiftPackageReference "Alamofire" */;
