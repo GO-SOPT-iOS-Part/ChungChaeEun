@@ -21,6 +21,7 @@ final class CarrotTableViewCell: UITableViewCell {
     private let reservationLabel = UILabel()
     private let priceLabel = UILabel()
     private let horizontalStackView = UIStackView()
+    lazy var starButton = UIButton()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -78,7 +79,7 @@ final class CarrotTableViewCell: UITableViewCell {
     func setLayout() {
         
         [carrotImage, productLabel, placeLabel,
-         timeLabel, horizontalStackView]
+         timeLabel, horizontalStackView,starButton]
             .forEach { contentView.addSubview($0) }
         
         [reservationLabel, priceLabel]
