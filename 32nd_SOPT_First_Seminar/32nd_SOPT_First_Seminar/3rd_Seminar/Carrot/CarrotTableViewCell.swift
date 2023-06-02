@@ -22,6 +22,7 @@ final class CarrotTableViewCell: UITableViewCell {
     private let priceLabel = UILabel()
     private let horizontalStackView = UIStackView()
     lazy var starButton = UIButton()
+    var isStar : Bool = false
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -74,6 +75,22 @@ final class CarrotTableViewCell: UITableViewCell {
             $0.alignment = .center
             $0.spacing = 5
         }
+        
+        starButton.do {
+            $0.setImage(UIImage(systemName: "star"), for: .normal)
+            $0.tintColor = .systemYellow
+            $0.addTarget(self, action: #selector(starButtonTapped), for: .touchUpInside)
+        }
+    }
+    
+    @objc func starButtonTapped() {
+        if isStar == false {
+            starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            isStar.toggle()
+        } else {
+            starButton.setImage(UIImage(systemName: "star"), for: .normal)
+            isStar.toggle()
+        }
     }
     
     func setLayout() {
@@ -116,6 +133,10 @@ final class CarrotTableViewCell: UITableViewCell {
             $0.top.equalTo(timeLabel.snp.bottom).offset(6)
             $0.height.equalTo(30)
         }
+        starButton.snp.makeConstraints{
+            $0.centerY.equalTo(horizontalStackView)
+            $0.trailing.equalToSuperview().inset(20)
+        }
     }
     
     func configureCell(_ carrot: Carrot) {
@@ -124,6 +145,7 @@ final class CarrotTableViewCell: UITableViewCell {
         productLabel.text = carrot.product
         placeLabel.text = carrot.place
         timeLabel.text = carrot.time
+        isStar = carrot.star
         
         reservationLabel.text = carrot.tradeStatus.title
         reservationLabel.backgroundColor = carrot.tradeStatus.backgroundColor
