@@ -7,23 +7,47 @@
 
 import UIKit
 
-class CarrotStarViewController: UIViewController {
+import SnapKit
+import Then
+
+final class CarrotStarViewController: UIViewController {
+    
+    private lazy var tableView = UITableView().then {
+        $0.register(CarrotTableViewCell.self, forCellReuseIdentifier: CarrotTableViewCell.identifier)
+        $0.rowHeight = 120
+        $0.delegate = self
+        $0.dataSource = self
+    }
+    
+    private let filterDummy : [Carrot] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStyle()
+        setLayout()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension CarrotStarViewController {
+    private func setStyle() {
+        view.backgroundColor = .white
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setLayout() {
+        
     }
-    */
+}
 
+extension CarrotStarViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filterDummy.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CarrotTableViewCell.identifier, for: indexPath) as? CarrotTableViewCell else { return UITableViewCell() }
+        
+        cell.configureCell(filterDummy[indexPath.row])
+        
+        return cell
+    }
 }
