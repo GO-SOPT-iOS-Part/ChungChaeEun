@@ -141,16 +141,26 @@ final class CarrotTableViewCell: UITableViewCell {
     
     func configureCell(_ carrot: Carrot) {
         
-        carrotImage.image = carrot.image
+        carrotImage.image = UIImage(named:carrot.image)
         productLabel.text = carrot.product
         placeLabel.text = carrot.place
         timeLabel.text = carrot.time
         isStar = carrot.star
         
-        reservationLabel.text = carrot.tradeStatus.title
-        reservationLabel.backgroundColor = carrot.tradeStatus.backgroundColor
+        reservationLabel.text = carrot.tradeStatus
         
-        reservationLabel.isHidden = carrot.tradeStatus == .clear
+        switch carrot.tradeStatus {
+        case "예약중":
+            reservationLabel.backgroundColor = .systemGreen
+        case "거래완료":
+            reservationLabel.backgroundColor = .black
+        case "나눔완료":
+            reservationLabel.backgroundColor = .gray
+        default:
+            reservationLabel.backgroundColor = .white
+        }
+        
+        reservationLabel.isHidden = carrot.tradeStatus == ""
         
         var price = String(carrot.price)
         if price.count > 3 {
