@@ -77,19 +77,7 @@ final class CarrotTableViewCell: UITableViewCell {
         }
         
         starButton.do {
-            $0.setImage(UIImage(systemName: "star"), for: .normal)
             $0.tintColor = .systemYellow
-            $0.addTarget(self, action: #selector(starButtonTapped), for: .touchUpInside)
-        }
-    }
-    
-    @objc func starButtonTapped() {
-        if isStar == false {
-            starButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            isStar.toggle()
-        } else {
-            starButton.setImage(UIImage(systemName: "star"), for: .normal)
-            isStar.toggle()
         }
     }
     

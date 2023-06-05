@@ -9,16 +9,18 @@ import UIKit
 
 import Then
 import SnapKit
+import RealmSwift
 
 final class CarrotViewController: BaseViewController {
     
+    let localRealm = try! Realm()
+    
     private let tableView = UITableView()
     
-    private let dummy = Carrot.dummy()
+    public let dummy = Carrot.dummy()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func setStyle() {
@@ -31,6 +33,10 @@ final class CarrotViewController: BaseViewController {
             $0.delegate = self
             $0.dataSource = self
         }
+//        try! localRealm.write {
+//            localRealm.add(dummy)
+//        }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     override func setLayout() {
@@ -45,7 +51,6 @@ final class CarrotViewController: BaseViewController {
 }
 
 extension CarrotViewController: UITableViewDelegate {}
-
 extension CarrotViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,11 +58,41 @@ extension CarrotViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CarrotTableViewCell.identifier, for: indexPath) as? CarrotTableViewCell else {
+            return UITableViewCell()
+        }
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CarrotTableViewCell.identifier, for: indexPath) as? CarrotTableViewCell else { return UITableViewCell() }
+        cell.starButton.tag = indexPath.row
+        cell.starButton.addTarget(self, action: #selector(starButtonTapped(_:)), for: .touchUpInside)
         
-        cell.configureCell(dummy[indexPath.row])
+        let item = dummy[indexPath.row]
+        cell.configureCell(item)
+        
+        let starImageName = item.star ? "star.fill" : "star"
+        cell.starButton.setImage(UIImage(systemName: starImageName), for: .normal)
         
         return cell
+    }
+    
+    @objc @IBAction func starButtonTapped(_ sender: UIButton) {
+        guard let cell = sender.superview?.superview as? CarrotTableViewCell else {
+            return
+        }
+        
+        let indexPath = IndexPath(row: sender.tag, section: 0)
+        let item = dummy[indexPath.row]
+        
+        do {
+            let realm = try Realm()
+            try realm.write {
+                item.star.toggle()
+                let starImageName = item.star ? "star.fill" : "star"
+                cell.starButton.setImage(UIImage(systemName: starImageName), for: .normal)
+                
+                realm.add(item, update: .modified)
+            }
+        } catch {
+            print("Realm 업데이트 오류: \(error)")
+        }
     }
 }

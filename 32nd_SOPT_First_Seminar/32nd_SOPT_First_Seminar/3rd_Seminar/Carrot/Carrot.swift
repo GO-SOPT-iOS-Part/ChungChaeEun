@@ -11,13 +11,13 @@ import RealmSwift
 
 class Carrot: Object {
     @Persisted(primaryKey: true) var id: Int = 0
-    @Persisted var image: String
-    @Persisted var product: String
-    @Persisted var place: String
-    @Persisted var time: String
-    @Persisted var tradeStatus: String
-    @Persisted var price: Int
-    @Persisted var star: Bool
+    @Persisted var image: String = ""
+    @Persisted var product: String = ""
+    @Persisted var place: String = ""
+    @Persisted var time: String = ""
+    @Persisted var tradeStatus: String = ""
+    @Persisted var price: Int = 0
+    @Persisted var star: Bool = false
     
     convenience init(id: Int, image: String, product: String, place: String, time: String, tradeStatus: String, price: Int, star: Bool) {
         
@@ -70,15 +70,15 @@ enum Trade {
 extension Carrot {
     
     static func dummy() -> [Carrot] {
-        return [Carrot(id: 0,
+        return [Carrot(id: 1,
                        image: "hypeBoy",
                        product: "에어팟 프로 2",
                        place: "하계 2동",
                        time: "일주일 전",
                        tradeStatus: "거래완료",
                        price: 200000,
-                       star: false),
-                Carrot(id: 1,
+                       star: true),
+                Carrot(id: 2,
                        image: "hypeBoy",
                        product:
                         "아이폰 11 Pro",
@@ -87,7 +87,7 @@ extension Carrot {
                        tradeStatus: "예약중",
                        price: 100000,
                        star: false),
-                Carrot(id: 2,
+                Carrot(id: 3,
                        image: "hypeBoy",
                        product:
                         "에어팟 맥스",
@@ -96,7 +96,7 @@ extension Carrot {
                        tradeStatus: "나눔완료",
                        price: 100000,
                        star: false),
-                Carrot(id: 3,
+                Carrot(id: 4,
                        image: "hypeBoy",
                        product:
                         "아이패드1",
@@ -105,7 +105,7 @@ extension Carrot {
                        tradeStatus: "거래완료",
                        price: 100000,
                        star: false),
-                Carrot(id: 4,
+                Carrot(id: 5,
                        image: "hypeBoy",
                        product:
                         "아이패드 2",
@@ -115,7 +115,7 @@ extension Carrot {
                        price: 100000,
                        star: false)
                 ,
-                Carrot(id: 5,
+                Carrot(id: 6,
                        image: "hypeBoy",
                        product:
                         "안팔아요",
@@ -125,7 +125,7 @@ extension Carrot {
                        price: 0,
                        star: false)
                 ,
-                Carrot(id: 6,
+                Carrot(id: 7,
                        image: "hypeBoy",
                        product:
                         "아이폰 14 Pro",
