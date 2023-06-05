@@ -1,46 +1,58 @@
 //
-//  CarrotViewController.swift
+//  CarrotStarViewController.swift
 //  32nd_SOPT_Seminar
 //
-//  Created by 정채은 on 2023/04/22.
+//  Created by 정채은 on 2023/05/27.
 //
 
 import UIKit
 
-import Then
 import SnapKit
+import Then
 import RealmSwift
 
-final class CarrotViewController: BaseViewController {
+final class CarrotStarViewController: UIViewController {
     
     let localRealm = try! Realm()
     
-    private let tableView = UITableView()
+    private lazy var tableView = UITableView().then {
+        $0.register(CarrotTableViewCell.self, forCellReuseIdentifier: CarrotTableViewCell.identifier)
+        $0.rowHeight = 120
+        $0.delegate = self
+        $0.dataSource = self
+    }
     
-    public let dummy = Carrot.dummy()
+    public var filterDummy : [Carrot] = []
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.filterDummy = realmDummy()
+        self.tableView.reloadData()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStyle()
+        setLayout()
     }
+}
+
+extension CarrotStarViewController {
     
-    override func setStyle() {
-        
-        view.backgroundColor = .white
-        
-        tableView.do {
-            $0.register(CarrotTableViewCell.self, forCellReuseIdentifier: CarrotTableViewCell.identifier)
-            $0.rowHeight = 120
-            $0.delegate = self
-            $0.dataSource = self
+    func realmDummy() -> [Carrot] {
+        let starred = localRealm.objects(Carrot.self).filter("star = %@", true)
+        var array : [Carrot] = []
+        starred.forEach{
+            array.append($0)
         }
-//        try! localRealm.write {
-//            localRealm.add(dummy)
-//        }
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        return array
     }
     
-    override func setLayout() {
-        
+    private func setStyle() {
+        view.backgroundColor = .white
+    }
+    
+    private func setLayout() {
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints {
@@ -50,45 +62,43 @@ final class CarrotViewController: BaseViewController {
     }
 }
 
-extension CarrotViewController: UITableViewDelegate {}
-extension CarrotViewController: UITableViewDataSource {
-    
+extension CarrotStarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dummy.count
+        return filterDummy.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CarrotTableViewCell.identifier, for: indexPath) as? CarrotTableViewCell else {
             return UITableViewCell()
         }
-        
+
         cell.starButton.tag = indexPath.row
         cell.starButton.addTarget(self, action: #selector(starButtonTapped(_:)), for: .touchUpInside)
-        
-        let item = dummy[indexPath.row]
+
+        let item = filterDummy[indexPath.row]
         cell.configureCell(item)
-        
+
         let starImageName = item.star ? "star.fill" : "star"
         cell.starButton.setImage(UIImage(systemName: starImageName), for: .normal)
-        
+
         return cell
     }
-    
+
     @objc @IBAction func starButtonTapped(_ sender: UIButton) {
         guard let cell = sender.superview?.superview as? CarrotTableViewCell else {
             return
         }
-        
+
         let indexPath = IndexPath(row: sender.tag, section: 0)
-        let item = dummy[indexPath.row]
+        let item = filterDummy[indexPath.row]
+
+        item.star.toggle()
+        let starImageName = item.star ? "star.fill" : "star"
+        cell.starButton.setImage(UIImage(systemName: starImageName), for: .normal)
         
         do {
             let realm = try Realm()
             try realm.write {
-                item.star.toggle()
-                let starImageName = item.star ? "star.fill" : "star"
-                cell.starButton.setImage(UIImage(systemName: starImageName), for: .normal)
-                
                 realm.add(item, update: .modified)
             }
         } catch {

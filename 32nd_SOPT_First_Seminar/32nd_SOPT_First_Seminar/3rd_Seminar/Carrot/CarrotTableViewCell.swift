@@ -21,6 +21,8 @@ final class CarrotTableViewCell: UITableViewCell {
     private let reservationLabel = UILabel()
     private let priceLabel = UILabel()
     private let horizontalStackView = UIStackView()
+    lazy var starButton = UIButton()
+    var isStar : Bool = false
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -73,12 +75,16 @@ final class CarrotTableViewCell: UITableViewCell {
             $0.alignment = .center
             $0.spacing = 5
         }
+        
+        starButton.do {
+            $0.tintColor = .systemYellow
+        }
     }
     
     func setLayout() {
         
         [carrotImage, productLabel, placeLabel,
-         timeLabel, horizontalStackView]
+         timeLabel, horizontalStackView,starButton]
             .forEach { contentView.addSubview($0) }
         
         [reservationLabel, priceLabel]
@@ -115,19 +121,34 @@ final class CarrotTableViewCell: UITableViewCell {
             $0.top.equalTo(timeLabel.snp.bottom).offset(6)
             $0.height.equalTo(30)
         }
+        starButton.snp.makeConstraints{
+            $0.centerY.equalTo(horizontalStackView)
+            $0.trailing.equalToSuperview().inset(20)
+        }
     }
     
     func configureCell(_ carrot: Carrot) {
         
-        carrotImage.image = carrot.image
+        carrotImage.image = UIImage(named:carrot.image)
         productLabel.text = carrot.product
         placeLabel.text = carrot.place
         timeLabel.text = carrot.time
+        isStar = carrot.star
         
-        reservationLabel.text = carrot.tradeStatus.title
-        reservationLabel.backgroundColor = carrot.tradeStatus.backgroundColor
+        reservationLabel.text = carrot.tradeStatus
         
-        reservationLabel.isHidden = carrot.tradeStatus == .clear
+        switch carrot.tradeStatus {
+        case "예약중":
+            reservationLabel.backgroundColor = .systemGreen
+        case "거래완료":
+            reservationLabel.backgroundColor = .black
+        case "나눔완료":
+            reservationLabel.backgroundColor = .gray
+        default:
+            reservationLabel.backgroundColor = .white
+        }
+        
+        reservationLabel.isHidden = carrot.tradeStatus == ""
         
         var price = String(carrot.price)
         if price.count > 3 {
